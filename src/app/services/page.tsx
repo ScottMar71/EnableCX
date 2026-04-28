@@ -5,7 +5,6 @@ import { SectionShell } from "@/components/layout/section-shell";
 import { ProcessSection } from "@/components/sections/process-section";
 import { FinalCTASection } from "@/components/sections/final-cta-section";
 import { Card } from "@/components/ui/card";
-import { AudiencePathwaysSection } from "@/components/sections/audience-pathways-section";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -24,9 +23,6 @@ export default function ServicesPage() {
       </SectionShell>
       <SectionShell subtle>
         <ServicesGridSection />
-      </SectionShell>
-      <SectionShell>
-        <AudiencePathwaysSection />
       </SectionShell>
       <SectionShell>
         <div className="space-y-6">

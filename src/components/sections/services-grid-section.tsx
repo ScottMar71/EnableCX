@@ -25,10 +25,10 @@ const services = [
 ];
 
 const processIcons = [
-  { label: "Assess", src: "/icons/assess.svg" },
-  { label: "Design", src: "/icons/design.svg" },
-  { label: "Deliver", src: "/icons/deliver.svg" },
-  { label: "Reinforce", src: "/icons/reinforce.svg" },
+  { label: "Assess", src: "/icons/assess.png" },
+  { label: "Design", src: "/icons/design.png" },
+  { label: "Deliver", src: "/icons/deliver.png" },
+  { label: "Reinforce", src: "/icons/reinforce.png" },
 ];
 
 export function ServicesGridSection() {

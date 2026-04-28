@@ -3,7 +3,6 @@ export const siteConfig = {
   description:
     "Practical SaaS, CCaaS, and UCaaS training programmes that improve platform adoption, team confidence, and customer outcomes.",
   nav: [
-    { label: "Who We Help", href: "/services#audience-pathways" },
     { label: "Services", href: "/services" },
     { label: "Case Studies", href: "/case-studies" },
     { label: "About", href: "/about" },

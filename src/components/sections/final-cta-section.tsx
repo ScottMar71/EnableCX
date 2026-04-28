@@ -4,14 +4,17 @@ import { analyticsEvents } from "@/lib/analytics/events";
 
 export function FinalCTASection() {
   return (
-    <div className="rounded-lg bg-text-primary p-8 text-white md:p-12">
+    <div className="rounded-lg bg-[#0AA09B]/18 p-8 text-text-primary md:p-12">
       <h2 className="text-3xl font-semibold">Ready to improve adoption and team confidence?</h2>
-      <p className="mt-4 max-w-2xl text-white/85">
+      <p className="mt-4 max-w-2xl text-text-secondary">
         In a short discovery call, we review your current adoption gaps and map
         a practical training plan for your teams and platform goals.
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
-        <Button asChild className="bg-white text-text-primary hover:bg-slate-200">
+        <Button
+          asChild
+          className="bg-brand-primary text-white hover:bg-brand-primary-hover"
+        >
           <TrackedLink
             href="/book-call"
             className="inline-flex"
@@ -21,7 +24,11 @@ export function FinalCTASection() {
             Book a Discovery Call
           </TrackedLink>
         </Button>
-        <Button asChild variant="secondary">
+        <Button
+          asChild
+          variant="secondary"
+          className="border-brand-primary bg-brand-primary text-white hover:bg-brand-primary-hover"
+        >
           <TrackedLink
             href="/resources"
             className="inline-flex"

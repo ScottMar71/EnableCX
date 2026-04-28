@@ -7,7 +7,6 @@ import { ServicesGridSection } from "@/components/sections/services-grid-section
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { CaseStudyFeatureSection } from "@/components/sections/case-study-feature-section";
 import { ConversionPathSection } from "@/components/sections/conversion-path-section";
-import { AudiencePathwaysSection } from "@/components/sections/audience-pathways-section";
 import { SectionShell } from "@/components/layout/section-shell";
 import { JsonLd } from "@/components/seo/json-ld";
 
@@ -33,9 +32,6 @@ export default function Home() {
       </SectionShell>
       <SectionShell>
         <ServicesGridSection />
-      </SectionShell>
-      <SectionShell subtle>
-        <AudiencePathwaysSection />
       </SectionShell>
       <SectionShell subtle>
         <OutcomesSection />

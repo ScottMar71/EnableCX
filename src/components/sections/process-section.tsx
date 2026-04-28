@@ -4,22 +4,22 @@ const steps = [
   {
     title: "Assess",
     description: "Map your platform goals, user groups, and adoption risks.",
-    icon: "/icons/assess.svg",
+    icon: "/icons/assess.png",
   },
   {
     title: "Design",
     description: "Build role-based training around real workflows and scenarios.",
-    icon: "/icons/design.svg",
+    icon: "/icons/design.png",
   },
   {
     title: "Deliver",
     description: "Run practical sessions that move teams from theory to execution.",
-    icon: "/icons/deliver.svg",
+    icon: "/icons/deliver.png",
   },
   {
     title: "Reinforce",
     description: "Track adoption and close remaining gaps with targeted follow-up.",
-    icon: "/icons/reinforce.svg",
+    icon: "/icons/reinforce.png",
   },
 ];
 
@@ -41,7 +41,7 @@ export function ProcessSection() {
             key={step.title}
             className="rounded-md border border-border-default bg-white p-5"
           >
-            <p className="text-center text-sm font-semibold text-brand-primary">{step.title}</p>
+            <p className="text-sm font-semibold text-[#0AA09B] text-center">{step.title}</p>
             <div className="mt-2 flex justify-center">
               <Image src={step.icon} alt="" aria-hidden width={40} height={40} className="h-10 w-10 object-contain" />
             </div>
