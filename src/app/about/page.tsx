@@ -13,27 +13,133 @@ export default function AboutPage() {
         />
       </SectionShell>
       <SectionShell subtle>
-        <div className="space-y-6">
-          <h2 className="text-3xl font-semibold text-text-primary">How we work</h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            <Card>
-              <p className="font-semibold text-text-primary">Practical by design</p>
-              <p className="mt-2 text-sm text-text-secondary">
-                Training is mapped to real workflows, not generic theory.
-              </p>
-            </Card>
-            <Card>
-              <p className="font-semibold text-text-primary">Role-based delivery</p>
-              <p className="mt-2 text-sm text-text-secondary">
-                Sessions are tailored for frontline teams, managers, and platform owners.
-              </p>
-            </Card>
-            <Card>
-              <p className="font-semibold text-text-primary">Outcome focused</p>
-              <p className="mt-2 text-sm text-text-secondary">
-                Every engagement is designed to improve adoption and operational consistency.
-              </p>
-            </Card>
+        <div className="space-y-8">
+          <div className="space-y-3">
+            <h2 className="text-3xl font-semibold text-text-primary">What We Do</h2>
+            <p className="text-text-secondary">
+              We deliver hands-on, value-driven training and enablement designed to help partners,
+              customers, and internal teams succeed in an increasingly digital, cloud-first world.
+            </p>
+            <p className="text-text-secondary">
+              At the core of our approach is a belief that training should be more than knowledge
+              transfer - it should drive real business impact. We design engaging, practical
+              learning experiences that empower individuals, accelerate adoption, and unlock the
+              full value of technology investments, particularly across CCaaS, UCaaS, and SaaS
+              environments.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold text-text-primary">How We Create Impact</h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              <Card>
+                <p className="text-sm text-text-secondary">
+                  Increase revenue by enabling better sales conversations and product
+                  understanding.
+                </p>
+              </Card>
+              <Card>
+                <p className="text-sm text-text-secondary">
+                  Reduce churn through stronger customer engagement and confidence.
+                </p>
+              </Card>
+              <Card>
+                <p className="text-sm text-text-secondary">
+                  Improve customer experience by equipping teams with the skills to deliver
+                  consistently high-quality service.
+                </p>
+              </Card>
+              <Card>
+                <p className="text-sm text-text-secondary">
+                  Drive adoption of platforms and tools, ensuring organisations realise full ROI.
+                </p>
+              </Card>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold text-text-primary">Our Approach</h3>
+            <div className="grid gap-4 md:grid-cols-2">
+              <Card>
+                <p className="text-sm text-text-secondary">
+                  Design engaging, hands-on learning experiences tailored to real-world use cases.
+                </p>
+              </Card>
+              <Card>
+                <p className="text-sm text-text-secondary">
+                  Prioritise value-driven outcomes, not just course completion.
+                </p>
+              </Card>
+              <Card>
+                <p className="text-sm text-text-secondary">
+                  Empower agents and teams to perform with confidence and autonomy.
+                </p>
+              </Card>
+              <Card>
+                <p className="text-sm text-text-secondary">
+                  Support continuous digital growth through ongoing learning and optimisation.
+                </p>
+              </Card>
+            </div>
+            <p className="text-text-secondary">
+              We embrace individual strengths, foster a culture of empowerment, and ensure every
+              programme is aligned to both business goals and user needs.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-2xl font-semibold text-text-primary">Our Mission</h3>
+            <p className="text-text-secondary">
+              To equip partners and customers with the knowledge, tools, and confidence they need
+              to succeed - while helping organisations transform training into a strategic driver
+              of growth, efficiency, and customer experience.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold text-text-primary">
+              Why Training Matters Across the Business Ecosystem
+            </h3>
+            <p className="text-text-secondary">
+              Training creates value across every level of a business ecosystem, from commercial
+              partners to internal teams.
+            </p>
+            <div className="grid gap-4 md:grid-cols-3">
+              <Card>
+                <h4 className="text-sm font-semibold text-text-primary">For Partners</h4>
+                <p className="mt-2 text-sm text-text-secondary">
+                  Effective training drives increased revenue, reduces churn and support demand,
+                  and speeds up onboarding to build stronger, more sustainable relationships.
+                </p>
+              </Card>
+              <Card>
+                <h4 className="text-sm font-semibold text-text-primary">For Organisations</h4>
+                <p className="mt-2 text-sm text-text-secondary">
+                  It improves sales performance, customer engagement, retention, and satisfaction
+                  while reducing support tickets, shortening onboarding time, and preventing costly
+                  adoption gaps.
+                </p>
+              </Card>
+              <Card>
+                <h4 className="text-sm font-semibold text-text-primary">For Employees</h4>
+                <p className="mt-2 text-sm text-text-secondary">
+                  Training increases productivity, confidence, consistency, and technical capability
+                  while reducing supervision overhead and improving team performance and retention.
+                </p>
+              </Card>
+            </div>
+            <p className="text-text-secondary">
+              In short, training is not just a support function. It is a strategic driver of
+              growth, efficiency, customer experience, and long-term business success.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-2xl font-semibold text-text-primary">In Short</h3>
+            <p className="text-text-secondary">We don&apos;t just deliver training.</p>
+            <p className="text-text-secondary">
+              We enable performance, accelerate adoption, and drive measurable business outcomes.
+            </p>
           </div>
         </div>
       </SectionShell>

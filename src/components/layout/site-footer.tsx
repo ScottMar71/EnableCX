@@ -2,6 +2,12 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { SiteLogo } from "@/components/layout/site-logo";
 
+const footerIcons: Record<string, string> = {
+  Services: "/icons/services.svg",
+  About: "/icons/about.svg",
+  Contact: "/icons/contact.svg",
+};
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-border-default bg-white py-12">
@@ -12,7 +18,15 @@ export function SiteFooter() {
         </div>
 
         <div className="space-y-3">
-          <p className="text-sm font-semibold text-text-primary">Services</p>
+          <p className="inline-flex items-center gap-1.5 text-sm font-semibold text-text-primary">
+            <img
+              src={footerIcons.Services}
+              alt=""
+              aria-hidden="true"
+              className="h-4 w-4 shrink-0"
+            />
+            Services
+          </p>
           <div className="space-y-2">
             {siteConfig.footerLinks.services.map((item) => (
               <Link
@@ -33,8 +47,16 @@ export function SiteFooter() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block text-sm text-text-secondary hover:text-text-primary"
+                className="flex items-center gap-1.5 text-sm text-text-secondary hover:text-text-primary"
               >
+                {footerIcons[item.label] ? (
+                  <img
+                    src={footerIcons[item.label]}
+                    alt=""
+                    aria-hidden="true"
+                    className="h-4 w-4 shrink-0"
+                  />
+                ) : null}
                 {item.label}
               </Link>
             ))}
