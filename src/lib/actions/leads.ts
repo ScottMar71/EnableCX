@@ -5,12 +5,12 @@ import { z } from "zod";
 import { createAdminClient } from "@/lib/supabase/admin";
 
 const leadSchema = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  company: z.string().optional(),
-  teamSize: z.string().optional(),
-  serviceInterest: z.string().optional(),
-  message: z.string().min(8),
+  name: z.string().trim().min(2).max(120),
+  email: z.string().trim().email().max(255),
+  company: z.string().trim().max(160).optional(),
+  teamSize: z.string().trim().max(64).optional(),
+  serviceInterest: z.string().trim().max(80).optional(),
+  message: z.string().trim().min(8).max(4000),
   sourcePage: z.string().min(1),
 });
 
@@ -35,6 +35,11 @@ async function insertLead(input: LeadInput) {
 }
 
 export async function submitBookCallLead(formData: FormData) {
+  const honeypot = formData.get("website");
+  if (typeof honeypot === "string" && honeypot.trim().length > 0) {
+    redirect("/book-call?submitted=1");
+  }
+
   const parsed = leadSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
@@ -59,6 +64,11 @@ export async function submitBookCallLead(formData: FormData) {
 }
 
 export async function submitContactLead(formData: FormData) {
+  const honeypot = formData.get("website");
+  if (typeof honeypot === "string" && honeypot.trim().length > 0) {
+    redirect("/contact?submitted=1");
+  }
+
   const parsed = leadSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),

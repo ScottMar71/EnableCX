@@ -36,6 +36,14 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         action={submitContactLead}
         className="mt-10 grid max-w-2xl gap-5 rounded-md border border-border-default bg-white p-6"
       >
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="hidden"
+        />
         <FormField id="name" label="Name">
           <Input id="name" name="name" placeholder="Jane Smith" />
         </FormField>

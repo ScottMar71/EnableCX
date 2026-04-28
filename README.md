@@ -28,6 +28,8 @@ cp .env.example .env.local
 - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY`
 
+The app now performs startup-time environment validation for these keys, so missing values fail fast instead of causing runtime form submission errors.
+
 4. Start development server:
 
 ```bash
