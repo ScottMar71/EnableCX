@@ -113,7 +113,7 @@ export function SiteHeader() {
                 href={siteConfig.primaryCta.href}
                 eventName={analyticsEvents.ctaClickBookCall}
                 location="header_mobile"
-                className="inline-flex"
+                className="inline-flex text-[#ffffff]"
               >
                 {siteConfig.primaryCta.label}
               </TrackedLink>

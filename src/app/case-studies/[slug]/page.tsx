@@ -100,7 +100,7 @@ export default async function CaseStudyDetailPage({ params }: CaseStudyDetailPro
             href="/book-call"
             eventName={analyticsEvents.ctaClickBookCall}
             location="case_study_detail"
-            className="inline-flex"
+            className="inline-flex text-[#ffffff]"
           >
             Book a Discovery Call
           </TrackedLink>

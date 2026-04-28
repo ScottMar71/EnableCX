@@ -13,11 +13,11 @@ export function FinalCTASection() {
       <div className="mt-6 flex flex-wrap gap-3">
         <Button
           asChild
-          className="bg-brand-primary text-white hover:bg-brand-primary-hover"
+          className="bg-brand-primary text-[#ffffff] hover:bg-brand-primary-hover"
         >
           <TrackedLink
             href="/book-call"
-            className="inline-flex"
+            className="inline-flex text-[#ffffff]"
             eventName={analyticsEvents.ctaClickBookCall}
             location="final_cta"
           >
@@ -27,11 +27,11 @@ export function FinalCTASection() {
         <Button
           asChild
           variant="secondary"
-          className="border-brand-primary bg-brand-primary text-white hover:bg-brand-primary-hover"
+          className="border-brand-primary bg-brand-primary text-[#ffffff] hover:bg-brand-primary-hover"
         >
           <TrackedLink
             href="/resources"
-            className="inline-flex"
+            className="inline-flex text-[#ffffff]"
             eventName={analyticsEvents.ctaClickResources}
             location="final_cta"
           >

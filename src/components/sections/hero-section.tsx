@@ -23,6 +23,7 @@ export function HeroSection() {
             href="/book-call"
             eventName={analyticsEvents.ctaClickBookCall}
             location="home_hero"
+            className="text-[#ffffff]"
           >
             Book a Call
           </TrackedLink>
