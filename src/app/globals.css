@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --background-subtle: #f1f5f9;
+  --foreground: #0f172a;
+  --foreground-secondary: #334155;
+  --foreground-muted: #64748b;
+  --border: #e2e8f0;
+  --brand: #1d4ed8;
+  --brand-hover: #1e40af;
+  --brand-accent: #06b6d4;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --error: #dc2626;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-bg-base: var(--background);
+  --color-bg-subtle: var(--background-subtle);
+  --color-text-primary: var(--foreground);
+  --color-text-secondary: var(--foreground-secondary);
+  --color-text-muted: var(--foreground-muted);
+  --color-border-default: var(--border);
+  --color-brand-primary: var(--brand);
+  --color-brand-primary-hover: var(--brand-hover);
+  --color-brand-accent: var(--brand-accent);
+  --color-state-success: var(--success);
+  --color-state-warning: var(--warning);
+  --color-state-error: var(--error);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
 }
 
 body {
-  background: var(--background);
+  background: var(--background-subtle);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.container-shell {
+  margin-inline: auto;
+  width: min(100% - 2.5rem, 1200px);
+}
+
+.prose-shell {
+  max-width: 75ch;
 }
