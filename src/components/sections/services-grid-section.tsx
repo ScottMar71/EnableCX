@@ -4,22 +4,22 @@ import { analyticsEvents } from "@/lib/analytics/events";
 
 const services = [
   {
-    title: "SaaS Training",
+    title: "Platform Adoption Training",
     href: "/services/saas-training",
     description:
-      "Role-based enablement to improve platform usage, workflow consistency, and team confidence.",
+      "Role-based training to improve day-to-day platform usage, workflow consistency, and team confidence.",
   },
   {
-    title: "CCaaS Training",
+    title: "Workflow Enablement Training",
     href: "/services/ccaas-training",
     description:
-      "Contact center training that improves adoption, agent performance, and customer experience consistency.",
+      "Practical enablement that improves cross-team execution, service quality, and customer experience consistency.",
   },
   {
-    title: "UCaaS Training",
+    title: "Rollout Training",
     href: "/services/ucaas-training",
     description:
-      "Rollout-focused training for admins and end users to improve adoption and communication quality.",
+      "Structured onboarding and rollout support for admins and frontline users to increase adoption faster.",
   },
 ];
 
@@ -28,7 +28,7 @@ export function ServicesGridSection() {
     <div className="space-y-8">
       <div className="space-y-3">
         <h2 className="text-3xl font-semibold text-text-primary">
-          Specialist training across three core areas
+          Specialist training for customer-facing teams
         </h2>
         <p className="prose-shell text-text-secondary">
           Each program is tailored to how your teams work so adoption becomes part

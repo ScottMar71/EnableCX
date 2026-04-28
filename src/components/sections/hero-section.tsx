@@ -7,13 +7,13 @@ export function HeroSection() {
   return (
     <div className="grid gap-10 py-16 md:py-24">
       <div className="space-y-6">
-        <Badge>SaaS | CCaaS | UCaaS</Badge>
+        <Badge>Customer Platform Training</Badge>
         <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-text-primary md:text-5xl">
-          Training that drives adoption across SaaS, CCaaS, and UCaaS.
+          Training that drives adoption across customer-facing teams.
         </h1>
         <p className="prose-shell text-lg text-text-secondary">
-          EnableCX helps businesses train teams, improve platform adoption, and
-          create more consistent customer experiences.
+          EnableCX helps support, success, and operations teams build confidence,
+          standardize workflows, and get more value from their platforms.
         </p>
       </div>
       <div className="flex flex-wrap gap-3">

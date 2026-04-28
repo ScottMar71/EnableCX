@@ -20,7 +20,7 @@ export default function Home() {
           name: "EnableCX",
           url: "https://enablecx.com",
           description:
-            "Specialist consultancy training for SaaS, CCaaS, and UCaaS teams.",
+            "Specialist consultancy training that improves platform adoption, team confidence, and customer experience consistency.",
           areaServed: "Global",
         }}
       />

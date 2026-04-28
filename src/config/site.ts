@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "EnableCX",
   description:
-    "Specialist consultancy training for SaaS, CCaaS, and UCaaS teams.",
+    "Specialist consultancy training that improves platform adoption, team confidence, and customer experience consistency.",
   nav: [
     { label: "Services", href: "/services" },
     { label: "Case Studies", href: "/case-studies" },
@@ -19,9 +19,9 @@ export const siteConfig = {
       { label: "Contact", href: "/contact" },
     ],
     services: [
-      { label: "SaaS Training", href: "/services/saas-training" },
-      { label: "CCaaS Training", href: "/services/ccaas-training" },
-      { label: "UCaaS Training", href: "/services/ucaas-training" },
+      { label: "Platform Adoption Training", href: "/services/saas-training" },
+      { label: "Workflow Enablement Training", href: "/services/ccaas-training" },
+      { label: "Rollout Training", href: "/services/ucaas-training" },
     ],
     legal: [
       { label: "Privacy", href: "/legal/privacy" },
