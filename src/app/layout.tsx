@@ -10,12 +10,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://enablecx.com"),
   title: {
     default: "EnableCX | SaaS, CCaaS, and UCaaS Training",
     template: "%s | EnableCX",
   },
   description:
     "EnableCX helps teams adopt SaaS, CCaaS, and UCaaS platforms through practical, high-impact training.",
+  openGraph: {
+    type: "website",
+    title: "EnableCX | SaaS, CCaaS, and UCaaS Training",
+    description:
+      "EnableCX helps teams adopt SaaS, CCaaS, and UCaaS platforms through practical, high-impact training.",
+    url: "https://enablecx.com",
+    siteName: "EnableCX",
+  },
 };
 
 export default function RootLayout({

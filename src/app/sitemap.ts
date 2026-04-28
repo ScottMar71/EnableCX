@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+import { caseStudies } from "@/content/case-studies";
+import { resources } from "@/content/resources";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
@@ -17,10 +19,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/legal/cookies",
   ];
 
-  return routes.map((route) => ({
+  const staticRoutes = routes.map((route) => ({
     url: `https://enablecx.com${route}`,
     lastModified: new Date(),
-    changeFrequency: "weekly",
+    changeFrequency: "weekly" as const,
     priority: route === "" ? 1 : 0.7,
   }));
+
+  const caseStudyRoutes = caseStudies.map((item) => ({
+    url: `https://enablecx.com/case-studies/${item.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  const resourceRoutes = resources.map((item) => ({
+    url: `https://enablecx.com/resources/${item.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...caseStudyRoutes, ...resourceRoutes];
 }

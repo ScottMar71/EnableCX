@@ -8,10 +8,22 @@ import { ServicesGridSection } from "@/components/sections/services-grid-section
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { CaseStudyFeatureSection } from "@/components/sections/case-study-feature-section";
 import { SectionShell } from "@/components/layout/section-shell";
+import { JsonLd } from "@/components/seo/json-ld";
 
 export default function Home() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "EnableCX",
+          url: "https://enablecx.com",
+          description:
+            "Specialist consultancy training for SaaS, CCaaS, and UCaaS teams.",
+          areaServed: "Global",
+        }}
+      />
       <SectionShell>
         <HeroSection />
       </SectionShell>
