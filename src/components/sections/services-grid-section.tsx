@@ -1,5 +1,6 @@
-import Link from "next/link";
 import { Card } from "@/components/ui/card";
+import { TrackedLink } from "@/components/analytics/tracked-link";
+import { analyticsEvents } from "@/lib/analytics/events";
 
 const services = [
   {
@@ -36,12 +37,17 @@ export function ServicesGridSection() {
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         {services.map((service) => (
-          <Link key={service.href} href={service.href}>
+          <TrackedLink
+            key={service.href}
+            href={service.href}
+            eventName={analyticsEvents.serviceCardClick}
+            location="services_grid"
+          >
             <Card className="h-full transition-colors hover:border-brand-primary">
               <h3 className="text-xl font-semibold text-text-primary">{service.title}</h3>
               <p className="mt-3 text-sm text-text-secondary">{service.description}</p>
             </Card>
-          </Link>
+          </TrackedLink>
         ))}
       </div>
     </div>

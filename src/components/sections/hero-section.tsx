@@ -1,6 +1,7 @@
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { TrackedLink } from "@/components/analytics/tracked-link";
+import { analyticsEvents } from "@/lib/analytics/events";
 
 export function HeroSection() {
   return (
@@ -16,14 +17,22 @@ export function HeroSection() {
         </p>
       </div>
       <div className="flex flex-wrap gap-3">
-        <Link href="/book-call">
+        <TrackedLink
+          href="/book-call"
+          eventName={analyticsEvents.ctaClickBookCall}
+          location="home_hero"
+        >
           <Button size="lg">Book a Call</Button>
-        </Link>
-        <Link href="/services">
+        </TrackedLink>
+        <TrackedLink
+          href="/services"
+          eventName={analyticsEvents.serviceCardClick}
+          location="home_hero"
+        >
           <Button variant="secondary" size="lg">
             Explore Services
           </Button>
-        </Link>
+        </TrackedLink>
       </div>
     </div>
   );

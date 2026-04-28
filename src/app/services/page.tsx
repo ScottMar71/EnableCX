@@ -1,6 +1,8 @@
 import { PageIntro } from "@/components/sections/page-intro";
 import { ServicesGridSection } from "@/components/sections/services-grid-section";
 import { SectionShell } from "@/components/layout/section-shell";
+import { ProcessSection } from "@/components/sections/process-section";
+import { FinalCTASection } from "@/components/sections/final-cta-section";
 
 export default function ServicesPage() {
   return (
@@ -13,6 +15,12 @@ export default function ServicesPage() {
       </SectionShell>
       <SectionShell subtle>
         <ServicesGridSection />
+      </SectionShell>
+      <SectionShell>
+        <ProcessSection />
+      </SectionShell>
+      <SectionShell subtle>
+        <FinalCTASection />
       </SectionShell>
     </>
   );

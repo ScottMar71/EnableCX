@@ -1,5 +1,6 @@
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { TrackedLink } from "@/components/analytics/tracked-link";
+import { analyticsEvents } from "@/lib/analytics/events";
 
 export function FinalCTASection() {
   return (
@@ -9,11 +10,16 @@ export function FinalCTASection() {
         Book a short discovery call to review your current platform challenges and
         identify a practical training plan.
       </p>
-      <Link href="/book-call" className="mt-6 inline-flex">
+      <TrackedLink
+        href="/book-call"
+        className="mt-6 inline-flex"
+        eventName={analyticsEvents.ctaClickBookCall}
+        location="final_cta"
+      >
         <Button className="bg-white text-text-primary hover:bg-slate-200">
           Book a Discovery Call
         </Button>
-      </Link>
+      </TrackedLink>
     </div>
   );
 }

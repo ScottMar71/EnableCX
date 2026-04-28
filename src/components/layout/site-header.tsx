@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
+import { TrackedLink } from "@/components/analytics/tracked-link";
+import { analyticsEvents } from "@/lib/analytics/events";
 
 export function SiteHeader() {
   return (
@@ -20,9 +22,13 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Link href={siteConfig.primaryCta.href}>
+        <TrackedLink
+          href={siteConfig.primaryCta.href}
+          eventName={analyticsEvents.ctaClickBookCall}
+          location="header"
+        >
           <Button size="md">{siteConfig.primaryCta.label}</Button>
-        </Link>
+        </TrackedLink>
       </div>
     </header>
   );

@@ -1,19 +1,43 @@
-import { PageIntro } from "@/components/sections/page-intro";
-import { FinalCTASection } from "@/components/sections/final-cta-section";
-import { SectionShell } from "@/components/layout/section-shell";
+import { ServiceDetailTemplate } from "@/components/sections/service-detail-template";
 
 export default function CcaaSTrainingPage() {
   return (
-    <>
-      <SectionShell>
-        <PageIntro
-          title="CCaaS Training"
-          description="Contact center training focused on adoption, agent confidence, and operational consistency."
-        />
-      </SectionShell>
-      <SectionShell>
-        <FinalCTASection />
-      </SectionShell>
-    </>
+    <ServiceDetailTemplate
+      title="CCaaS Training"
+      description="Contact center training focused on adoption, agent confidence, and operational consistency."
+      audience={[
+        "Contact center leaders and operations managers.",
+        "Agents, supervisors, and quality teams.",
+      ]}
+      challenges={[
+        "Inconsistent handling across channels.",
+        "Low confidence in platform workflows.",
+        "Underused supervisor and QA tooling.",
+      ]}
+      inclusions={[
+        "Agent and supervisor role-path training.",
+        "Omnichannel workflow enablement.",
+        "QA and coaching alignment sessions.",
+      ]}
+      outcomes={[
+        "Improved adoption and handling consistency.",
+        "Stronger confidence for frontline and leadership roles.",
+        "Better use of CCaaS reporting and coaching workflows.",
+      ]}
+      faqs={[
+        {
+          id: "ccaas-1",
+          question: "Do you train both agents and supervisors?",
+          answer:
+            "Yes. Programs are split by role so each audience gets practical sessions.",
+        },
+        {
+          id: "ccaas-2",
+          question: "Can training align with our QA framework?",
+          answer:
+            "Yes. We map coaching and quality processes into the training plan.",
+        },
+      ]}
+    />
   );
 }
