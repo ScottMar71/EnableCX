@@ -28,11 +28,11 @@ export function ServicesGridSection() {
     <div className="space-y-8">
       <div className="space-y-3">
         <h2 className="text-3xl font-semibold text-text-primary">
-          Specialist training for customer-facing teams
+          Training built for frontline teams and platform owners
         </h2>
         <p className="prose-shell text-text-secondary">
-          Each program is tailored to how your teams work so adoption becomes part
-          of daily operations, not a one-time event.
+          We design practical, role-based programmes around your real workflows so
+          adoption becomes repeatable day-to-day behaviour, not a one-off launch activity.
         </p>
       </div>
       <div className="grid gap-4 md:grid-cols-3">

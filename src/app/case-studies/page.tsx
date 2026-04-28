@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Card } from "@/components/ui/card";
 import { SectionShell } from "@/components/layout/section-shell";
@@ -5,6 +6,12 @@ import { caseStudies } from "@/content/case-studies";
 import { TrackedLink } from "@/components/analytics/tracked-link";
 import { analyticsEvents } from "@/lib/analytics/events";
 import { FinalCTASection } from "@/components/sections/final-cta-section";
+
+export const metadata: Metadata = {
+  title: "Case Studies",
+  description:
+    "See how EnableCX case studies improve adoption, confidence, and customer outcomes across SaaS, CCaaS, and UCaaS teams.",
+};
 
 export default function CaseStudiesPage() {
   return (

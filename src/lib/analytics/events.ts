@@ -1,5 +1,8 @@
 export const analyticsEvents = {
   ctaClickBookCall: "cta_click_book_call",
+  ctaClickResources: "cta_click_resources",
+  ctaClickChecklist: "cta_click_checklist",
+  audiencePathClick: "audience_path_click",
   schedulerView: "scheduler_view",
   schedulerSubmit: "scheduler_submit",
   contactFormSubmit: "contact_form_submit",

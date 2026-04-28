@@ -8,10 +8,10 @@ type SiteLogoProps = {
 export function SiteLogo({ className, priority = false }: SiteLogoProps) {
   return (
     <Image
-      src="/logo-primary.png"
+      src="/logo-black.svg"
       alt="EnableCX"
-      width={960}
-      height={227}
+      width={320}
+      height={76}
       priority={priority}
       className={className}
     />

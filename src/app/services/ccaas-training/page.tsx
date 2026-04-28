@@ -4,7 +4,7 @@ export default function CcaaSTrainingPage() {
   return (
     <ServiceDetailTemplate
       title="CCaaS Training"
-      description="Contact center training focused on adoption, agent confidence, and operational consistency."
+      description="AI specialist contact center training focused on adoption, agent confidence, and operational consistency."
       audience={[
         "Contact center leaders and operations managers.",
         "Agents, supervisors, and quality teams.",

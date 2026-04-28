@@ -1,19 +1,19 @@
 const painPoints = [
-  "Low adoption after implementation",
-  "Inconsistent workflows across teams",
-  "Slow ramp time for new users",
-  "Reduced impact from expensive platforms",
+  "Low adoption after go-live",
+  "Inconsistent customer handling across teams",
+  "Long ramp times for new hires",
+  "Underused features in high-cost platforms",
 ];
 
 export function PainPointsSection() {
   return (
     <div className="space-y-6">
       <h2 className="text-3xl font-semibold text-text-primary">
-        The technology is only half the investment
+        Most rollout issues are people and process issues
       </h2>
       <p className="prose-shell text-text-secondary">
-        Many teams buy powerful platforms but struggle to turn rollout into
-        confident day-to-day usage. Training closes that gap.
+        Buying the right platform is only step one. Without structured enablement,
+        teams revert to old habits, service quality varies, and value realisation slows.
       </p>
       <ul className="grid gap-3 md:grid-cols-2">
         {painPoints.map((point) => (

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { PageIntro } from "@/components/sections/page-intro";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Input } from "@/components/ui/input";
@@ -9,6 +10,12 @@ import { submitContactLead } from "@/lib/actions/leads";
 
 type ContactPageProps = {
   searchParams: Promise<{ submitted?: string; error?: string }>;
+};
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contact EnableCX for help with SaaS, CCaaS, and UCaaS training programmes that improve adoption, consistency, and customer outcomes.",
 };
 
 export default async function ContactPage({ searchParams }: ContactPageProps) {
@@ -23,13 +30,21 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         description="Need support with SaaS, CCaaS, or UCaaS training? Send us a message."
       />
       {submitted ? (
-        <p className="mt-8 rounded-md border border-state-success/30 bg-green-50 px-4 py-3 text-sm text-state-success">
+        <p
+          role="status"
+          aria-live="polite"
+          className="mt-8 rounded-md border border-state-success/30 bg-green-50 px-4 py-3 text-sm text-state-success"
+        >
           Thanks, we have received your message and will reply within one business day.
         </p>
       ) : null}
       {hasError ? (
-        <p className="mt-8 rounded-md border border-state-error/30 bg-red-50 px-4 py-3 text-sm text-state-error">
-          We could not submit your message. Please review and try again.
+        <p
+          role="alert"
+          aria-live="assertive"
+          className="mt-8 rounded-md border border-state-error/30 bg-red-50 px-4 py-3 text-sm text-state-error"
+        >
+          We could not submit your message. Please review required fields and try again.
         </p>
       ) : null}
       <form
@@ -44,14 +59,14 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
           aria-hidden="true"
           className="hidden"
         />
-        <FormField id="name" label="Name">
-          <Input id="name" name="name" placeholder="Jane Smith" />
+        <FormField id="name" label="Name" required hint="Enter your full name.">
+          <Input id="name" name="name" placeholder="Jane Smith" required />
         </FormField>
-        <FormField id="email" label="Email">
-          <Input id="email" name="email" type="email" placeholder="jane@company.com" />
+        <FormField id="email" label="Email" required hint="Use a monitored email address.">
+          <Input id="email" name="email" type="email" placeholder="jane@company.com" required />
         </FormField>
-        <FormField id="company" label="Company">
-          <Input id="company" name="company" placeholder="EnableCX Ltd" />
+        <FormField id="company" label="Company" required>
+          <Input id="company" name="company" placeholder="EnableCX Ltd" required />
         </FormField>
         <FormField id="service_interest" label="Service Interest">
           <Select id="service_interest" name="service_interest">
@@ -61,8 +76,13 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
             <option value="General Inquiry">General Inquiry</option>
           </Select>
         </FormField>
-        <FormField id="message" label="Message">
-          <Textarea id="message" name="message" />
+        <FormField
+          id="message"
+          label="Message"
+          required
+          hint="Include your platform, team size, and desired outcomes."
+        >
+          <Textarea id="message" name="message" required />
         </FormField>
         <Button type="submit" className="w-fit">
           Send Message

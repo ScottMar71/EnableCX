@@ -74,6 +74,9 @@ export default async function CaseStudyDetailPage({ params }: CaseStudyDetailPro
 
         <blockquote className="rounded-md border-l-4 border-brand-primary bg-white p-5 text-text-secondary">
           &ldquo;{caseStudy.quote}&rdquo;
+          <footer className="mt-3 text-xs font-semibold uppercase tracking-wide text-text-primary">
+            {caseStudy.quoteAttribution}
+          </footer>
         </blockquote>
 
         <TrackedLink

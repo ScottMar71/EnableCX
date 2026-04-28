@@ -7,6 +7,8 @@ import { ProcessSection } from "@/components/sections/process-section";
 import { ServicesGridSection } from "@/components/sections/services-grid-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { CaseStudyFeatureSection } from "@/components/sections/case-study-feature-section";
+import { ConversionPathSection } from "@/components/sections/conversion-path-section";
+import { AudiencePathwaysSection } from "@/components/sections/audience-pathways-section";
 import { SectionShell } from "@/components/layout/section-shell";
 import { JsonLd } from "@/components/seo/json-ld";
 
@@ -20,7 +22,7 @@ export default function Home() {
           name: "EnableCX",
           url: "https://enablecx.com",
           description:
-            "Specialist consultancy training that improves platform adoption, team confidence, and customer experience consistency.",
+            "Practical SaaS, CCaaS, and UCaaS training programmes that improve platform adoption, team confidence, and customer outcomes.",
           areaServed: "Global",
         }}
       />
@@ -32,6 +34,9 @@ export default function Home() {
       </SectionShell>
       <SectionShell>
         <ServicesGridSection />
+      </SectionShell>
+      <SectionShell subtle>
+        <AudiencePathwaysSection />
       </SectionShell>
       <SectionShell subtle>
         <OutcomesSection />
@@ -47,6 +52,9 @@ export default function Home() {
       </SectionShell>
       <SectionShell subtle>
         <FAQSection />
+      </SectionShell>
+      <SectionShell>
+        <ConversionPathSection />
       </SectionShell>
       <SectionShell>
         <FinalCTASection />

@@ -7,6 +7,7 @@ export type CaseStudy = {
   delivery: string;
   results: string[];
   quote: string;
+  quoteAttribution: string;
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -27,6 +28,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     quote:
       "EnableCX made the platform practical for our team. Adoption improved quickly and consistently.",
+    quoteAttribution: "Support Enablement Lead, B2B SaaS Company",
   },
   {
     slug: "financial-services-cloud-communications-transformation",
@@ -48,6 +50,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     quote:
       "Technology enabled the change, but structured training and adoption support made the transformation stick.",
+    quoteAttribution: "Programme Sponsor, UK Financial Services Provider",
   },
   {
     slug: "ccaas-quality-consistency",
@@ -66,5 +69,6 @@ export const caseStudies: CaseStudy[] = [
     ],
     quote:
       "The training was tailored, practical, and directly tied to the customer experience outcomes we care about.",
+    quoteAttribution: "Customer Operations Director, Contact Centre Group",
   },
 ];

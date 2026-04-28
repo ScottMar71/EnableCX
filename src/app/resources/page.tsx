@@ -1,9 +1,17 @@
+import type { Metadata } from "next";
 import { PageIntro } from "@/components/sections/page-intro";
 import { SectionShell } from "@/components/layout/section-shell";
 import { resources } from "@/content/resources";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { FinalCTASection } from "@/components/sections/final-cta-section";
+import { ConversionPathSection } from "@/components/sections/conversion-path-section";
+
+export const metadata: Metadata = {
+  title: "Resources",
+  description:
+    "Read practical EnableCX resources on SaaS, CCaaS, and UCaaS rollout, adoption, and team enablement best practices.",
+};
 
 export default function ResourcesPage() {
   return (
@@ -13,6 +21,9 @@ export default function ResourcesPage() {
           title="Resources"
           description="Insights on SaaS, CCaaS, and UCaaS adoption to help teams improve platform outcomes."
         />
+        <div className="mt-8">
+          <ConversionPathSection compact />
+        </div>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {resources.map((resource) => (
             <Link key={resource.slug} href={`/resources/${resource.slug}`}>

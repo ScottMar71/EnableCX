@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import { PageIntro } from "@/components/sections/page-intro";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Card } from "@/components/ui/card";
 import { FinalCTASection } from "@/components/sections/final-cta-section";
+
+export const metadata: Metadata = {
+  title: "About EnableCX",
+  description:
+    "Learn how EnableCX helps teams increase adoption and performance across SaaS, CCaaS, and UCaaS platforms through practical training.",
+};
 
 export default function AboutPage() {
   return (
@@ -9,7 +16,7 @@ export default function AboutPage() {
       <SectionShell>
         <PageIntro
           title="About EnableCX"
-          description="Specialist consultancy helping teams adopt SaaS, CCaaS, and UCaaS platforms with confidence."
+          description="Specialist consultancy offering AI specialist training to help teams adopt SaaS, CCaaS, and UCaaS platforms with confidence."
         />
       </SectionShell>
       <SectionShell subtle>
@@ -17,8 +24,9 @@ export default function AboutPage() {
           <div className="space-y-3">
             <h2 className="text-3xl font-semibold text-text-primary">What We Do</h2>
             <p className="text-text-secondary">
-              We deliver hands-on, value-driven training and enablement designed to help partners,
-              customers, and internal teams succeed in an increasingly digital, cloud-first world.
+              We offer AI specialist training and hands-on, value-driven enablement designed to
+              help partners, customers, and internal teams succeed in an increasingly digital,
+              cloud-first world.
             </p>
             <p className="text-text-secondary">
               At the core of our approach is a belief that training should be more than knowledge

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { SiteLogo } from "@/components/layout/site-logo";
 
@@ -15,14 +16,20 @@ export function SiteFooter() {
         <div className="space-y-3">
           <SiteLogo className="h-11 w-auto drop-shadow-[0_1px_2px_rgba(15,23,42,0.14)]" />
           <p className="text-sm text-text-secondary">{siteConfig.description}</p>
+          <div className="space-y-1 text-sm text-text-secondary">
+            <p>Email: hello@enablecx.com</p>
+            <p>Typical response time: within 1 business day</p>
+          </div>
         </div>
 
         <div className="space-y-3">
           <p className="inline-flex items-center gap-1.5 text-sm font-semibold text-text-primary">
-            <img
+            <Image
               src={footerIcons.Services}
               alt=""
-              aria-hidden="true"
+              aria-hidden
+              width={16}
+              height={16}
               className="h-4 w-4 shrink-0"
             />
             Services
@@ -50,10 +57,12 @@ export function SiteFooter() {
                 className="flex items-center gap-1.5 text-sm text-text-secondary hover:text-text-primary"
               >
                 {footerIcons[item.label] ? (
-                  <img
+                  <Image
                     src={footerIcons[item.label]}
                     alt=""
-                    aria-hidden="true"
+                    aria-hidden
+                    width={16}
+                    height={16}
                     className="h-4 w-4 shrink-0"
                   />
                 ) : null}

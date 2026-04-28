@@ -4,7 +4,7 @@ export default function UcaaSTrainingPage() {
   return (
     <ServiceDetailTemplate
       title="UCaaS Training"
-      description="Rollout and adoption support for unified communications platforms across teams."
+      description="AI specialist rollout training and adoption support for unified communications platforms across teams."
       audience={[
         "IT leaders managing platform rollout.",
         "Department managers and end-user enablement leads.",

@@ -1,8 +1,8 @@
 const steps = [
-  { title: "Assess", description: "Review platform, users, and adoption gaps." },
-  { title: "Design", description: "Tailor role-based training to real workflows." },
-  { title: "Deliver", description: "Run focused sessions that are practical and applied." },
-  { title: "Reinforce", description: "Provide follow-up support for long-term adoption." },
+  { title: "Assess", description: "Map your platform goals, user groups, and adoption risks." },
+  { title: "Design", description: "Build role-based training around real workflows and scenarios." },
+  { title: "Deliver", description: "Run practical sessions that move teams from theory to execution." },
+  { title: "Reinforce", description: "Track adoption and close remaining gaps with targeted follow-up." },
 ];
 
 export function ProcessSection() {
@@ -10,11 +10,11 @@ export function ProcessSection() {
     <div className="space-y-8">
       <div className="space-y-3">
         <h2 className="text-3xl font-semibold text-text-primary">
-          A practical enablement approach
+          A structured delivery model
         </h2>
         <p className="prose-shell text-text-secondary">
-          We structure each engagement to improve confidence, consistency, and
-          measurable adoption outcomes.
+          We run each engagement with a clear sequence so your teams adopt faster
+          and sustain results after rollout.
         </p>
       </div>
       <div className="grid gap-4 md:grid-cols-4">

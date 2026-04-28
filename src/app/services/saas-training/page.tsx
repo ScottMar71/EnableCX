@@ -4,7 +4,7 @@ export default function SaaSTrainingPage() {
   return (
     <ServiceDetailTemplate
       title="SaaS Training"
-      description="Role-based enablement designed to improve SaaS adoption and workflow consistency."
+      description="AI specialist training and role-based enablement designed to improve SaaS adoption and workflow consistency."
       audience={[
         "Customer support and success teams scaling onboarding.",
         "Operations leaders standardizing cross-team workflows.",

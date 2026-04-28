@@ -1,9 +1,17 @@
+import type { Metadata } from "next";
 import { PageIntro } from "@/components/sections/page-intro";
 import { ServicesGridSection } from "@/components/sections/services-grid-section";
 import { SectionShell } from "@/components/layout/section-shell";
 import { ProcessSection } from "@/components/sections/process-section";
 import { FinalCTASection } from "@/components/sections/final-cta-section";
 import { Card } from "@/components/ui/card";
+import { AudiencePathwaysSection } from "@/components/sections/audience-pathways-section";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Explore EnableCX services for SaaS, CCaaS, and UCaaS adoption training that improves consistency, confidence, and measurable platform value.",
+};
 
 export default function ServicesPage() {
   return (
@@ -11,11 +19,14 @@ export default function ServicesPage() {
       <SectionShell>
         <PageIntro
           title="Services"
-          description="Training and enablement across SaaS, CCaaS, and UCaaS environments."
+          description="We offer AI specialist training and enablement across SaaS, CCaaS, and UCaaS environments."
         />
       </SectionShell>
       <SectionShell subtle>
         <ServicesGridSection />
+      </SectionShell>
+      <SectionShell>
+        <AudiencePathwaysSection />
       </SectionShell>
       <SectionShell>
         <div className="space-y-6">
