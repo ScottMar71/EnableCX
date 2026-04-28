@@ -5,7 +5,7 @@ import { analyticsEvents } from "@/lib/analytics/events";
 
 export function HeroSection() {
   return (
-    <div className="grid gap-10 py-16 md:py-24">
+    <div className="grid gap-8 rounded-lg border border-brand-primary/10 bg-brand-primary/[0.04] px-6 py-10 md:gap-10 md:px-10 md:py-14">
       <div className="space-y-6">
         <Badge>Customer Platform Training</Badge>
         <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-text-primary md:text-5xl">
@@ -17,7 +17,7 @@ export function HeroSection() {
           standardises workflows, and improves customer experience consistency.
         </p>
       </div>
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-2.5">
         <TrackedLink
           href="/book-call"
           eventName={analyticsEvents.ctaClickBookCall}
