@@ -112,7 +112,7 @@ export default async function ResourceDetailPage({ params }: ResourceDetailProps
                 location="resource_detail"
                 className="inline-flex"
               >
-                <Button size="sm">Book a Discovery Call</Button>
+                <Button>Book a Discovery Call</Button>
               </TrackedLink>
             </div>
             <div className="grid gap-3 md:grid-cols-2">
