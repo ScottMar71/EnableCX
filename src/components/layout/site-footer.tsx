@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { SiteLogo } from "@/components/layout/site-logo";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border-default bg-white py-12">
       <div className="container-shell grid gap-8 md:grid-cols-4">
         <div className="space-y-3">
-          <p className="text-lg font-semibold text-text-primary">{siteConfig.name}</p>
+          <SiteLogo className="h-9 w-auto" />
           <p className="text-sm text-text-secondary">{siteConfig.description}</p>
         </div>
 
