@@ -20,6 +20,22 @@ export async function generateMetadata({
   return {
     title: caseStudy.title,
     description: caseStudy.challenge,
+    alternates: {
+      canonical: `/case-studies/${caseStudy.slug}`,
+    },
+    openGraph: {
+      type: "article",
+      url: `https://enablecx.com/case-studies/${caseStudy.slug}`,
+      title: caseStudy.title,
+      description: caseStudy.challenge,
+      publishedTime: caseStudy.publishedDate,
+      siteName: "EnableCX",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: caseStudy.title,
+      description: caseStudy.challenge,
+    },
   };
 }
 
@@ -79,14 +95,16 @@ export default async function CaseStudyDetailPage({ params }: CaseStudyDetailPro
           </footer>
         </blockquote>
 
-        <TrackedLink
-          href="/book-call"
-          eventName={analyticsEvents.ctaClickBookCall}
-          location="case_study_detail"
-          className="inline-flex"
-        >
-          <Button>Book a Discovery Call</Button>
-        </TrackedLink>
+        <Button asChild>
+          <TrackedLink
+            href="/book-call"
+            eventName={analyticsEvents.ctaClickBookCall}
+            location="case_study_detail"
+            className="inline-flex"
+          >
+            Book a Discovery Call
+          </TrackedLink>
+        </Button>
       </article>
     </SectionShell>
   );

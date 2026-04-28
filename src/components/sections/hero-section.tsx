@@ -18,22 +18,24 @@ export function HeroSection() {
         </p>
       </div>
       <div className="flex flex-wrap gap-2.5">
-        <TrackedLink
-          href="/book-call"
-          eventName={analyticsEvents.ctaClickBookCall}
-          location="home_hero"
-        >
-          <Button size="lg">Book a Call</Button>
-        </TrackedLink>
-        <TrackedLink
-          href="/resources"
-          eventName={analyticsEvents.ctaClickResources}
-          location="home_hero"
-        >
-          <Button variant="secondary" size="lg">
+        <Button asChild size="lg">
+          <TrackedLink
+            href="/book-call"
+            eventName={analyticsEvents.ctaClickBookCall}
+            location="home_hero"
+          >
+            Book a Call
+          </TrackedLink>
+        </Button>
+        <Button asChild variant="secondary" size="lg">
+          <TrackedLink
+            href="/resources"
+            eventName={analyticsEvents.ctaClickResources}
+            location="home_hero"
+          >
             Get the Adoption Checklist
-          </Button>
-        </TrackedLink>
+          </TrackedLink>
+        </Button>
       </div>
     </div>
   );

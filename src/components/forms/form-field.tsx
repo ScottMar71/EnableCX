@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { cloneElement, isValidElement, type ReactElement, type ReactNode } from "react";
 
 type FormFieldProps = {
   id: string;
@@ -13,6 +13,12 @@ export function FormField({ id, label, hint, error, required = false, children }
   const hintId = hint ? `${id}-hint` : undefined;
   const errorId = error ? `${id}-error` : undefined;
   const describedBy = [errorId, hintId].filter(Boolean).join(" ") || undefined;
+  const fieldControl = isValidElement(children)
+    ? cloneElement(children as ReactElement<Record<string, unknown>>, {
+        "aria-describedby": describedBy,
+        "aria-invalid": Boolean(error) || undefined,
+      })
+    : children;
 
   return (
     <div className="space-y-2">
@@ -24,7 +30,7 @@ export function FormField({ id, label, hint, error, required = false, children }
           </span>
         ) : null}
       </label>
-      <div aria-describedby={describedBy}>{children}</div>
+      <div>{fieldControl}</div>
       {error ? (
         <p id={errorId} className="text-xs text-state-error">
           {error}

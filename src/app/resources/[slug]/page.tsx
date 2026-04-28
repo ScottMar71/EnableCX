@@ -24,6 +24,22 @@ export async function generateMetadata({
   return {
     title: article.title,
     description: article.excerpt,
+    alternates: {
+      canonical: `/resources/${article.slug}`,
+    },
+    openGraph: {
+      type: "article",
+      url: `https://enablecx.com/resources/${article.slug}`,
+      title: article.title,
+      description: article.excerpt,
+      publishedTime: article.publishedDate,
+      siteName: "EnableCX",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+    },
   };
 }
 
@@ -106,14 +122,16 @@ export default async function ResourceDetailPage({ params }: ResourceDetailProps
               >
                 Explore the related service
               </Link>
-              <TrackedLink
-                href="/book-call"
-                eventName={analyticsEvents.ctaClickBookCall}
-                location="resource_detail"
-                className="inline-flex"
-              >
-                <Button>Book a Discovery Call</Button>
-              </TrackedLink>
+              <Button asChild>
+                <TrackedLink
+                  href="/book-call"
+                  eventName={analyticsEvents.ctaClickBookCall}
+                  location="resource_detail"
+                  className="inline-flex"
+                >
+                  Book a Discovery Call
+                </TrackedLink>
+              </Button>
             </div>
             <div className="grid gap-3 md:grid-cols-2">
               {relatedResources.map((resource) => (

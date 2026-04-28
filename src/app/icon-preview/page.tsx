@@ -54,7 +54,7 @@ export default function IconPreviewPage() {
             <div className="overflow-x-auto rounded-xl border border-border-default">
               <table className={`w-full min-w-[620px] border-collapse ${surface.tableClassName}`}>
                 <thead>
-                  <tr className="border-b border-border-default bg-surface-subtle text-left">
+                  <tr className="border-b border-border-default bg-bg-subtle text-left">
                     <th className="px-4 py-3 text-sm font-medium text-text-primary">Icon</th>
                     {SIZES.map((size) => (
                       <th key={size} className="px-4 py-3 text-sm font-medium text-text-primary">

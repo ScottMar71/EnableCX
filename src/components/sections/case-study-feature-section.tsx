@@ -25,13 +25,15 @@ export function CaseStudyFeatureSection() {
           Improved visibility with real-time performance analytics.
         </p>
       </div>
-      <TrackedLink
-        href="/case-studies/financial-services-cloud-communications-transformation"
-        eventName={analyticsEvents.caseStudyClick}
-        location="home_case_study"
-      >
-        <Button variant="secondary">Read the Case Study</Button>
-      </TrackedLink>
+      <Button asChild variant="secondary">
+        <TrackedLink
+          href="/case-studies/financial-services-cloud-communications-transformation"
+          eventName={analyticsEvents.caseStudyClick}
+          location="home_case_study"
+        >
+          Read the Case Study
+        </TrackedLink>
+      </Button>
     </div>
   );
 }

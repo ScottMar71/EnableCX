@@ -14,7 +14,7 @@ export function SiteFooter() {
     <footer className="border-t border-border-default bg-white py-12">
       <div className="container-shell grid gap-8 md:grid-cols-4">
         <div className="space-y-3">
-          <SiteLogo className="h-11 w-auto drop-shadow-[0_1px_2px_rgba(15,23,42,0.14)]" />
+          <SiteLogo className="h-11 w-auto" />
           <p className="text-sm text-text-secondary">{siteConfig.description}</p>
           <div className="space-y-1 text-sm text-text-secondary">
             <p>Email: hello@enablecx.com</p>

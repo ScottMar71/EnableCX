@@ -23,14 +23,16 @@ export function ConversionPathSection({ compact = false }: ConversionPathSection
             Get the UCaaS rollout checklist to identify common adoption blockers and immediate
             fixes.
           </p>
-          <TrackedLink
-            href="/resources/ucaas-rollout-checklist"
-            eventName={analyticsEvents.ctaClickChecklist}
-            location={compact ? "resources_conversion_path" : "home_conversion_path"}
-            className="mt-4 inline-flex"
-          >
-            <Button variant="secondary">View Checklist</Button>
-          </TrackedLink>
+          <Button asChild variant="secondary" className="mt-4">
+            <TrackedLink
+              href="/resources/ucaas-rollout-checklist"
+              eventName={analyticsEvents.ctaClickChecklist}
+              location={compact ? "resources_conversion_path" : "home_conversion_path"}
+              className="inline-flex"
+            >
+              View Checklist
+            </TrackedLink>
+          </Button>
         </div>
         <div className="rounded-md border border-border-default bg-slate-50 p-5">
           <p className="text-sm font-semibold text-text-primary">Need a Tailored Plan?</p>
@@ -38,14 +40,16 @@ export function ConversionPathSection({ compact = false }: ConversionPathSection
             Book a 20-minute call and we will map your priorities, audiences, and rollout support
             plan.
           </p>
-          <TrackedLink
-            href="/book-call"
-            eventName={analyticsEvents.ctaClickBookCall}
-            location={compact ? "resources_conversion_path" : "home_conversion_path"}
-            className="mt-4 inline-flex"
-          >
-            <Button>Book a Discovery Call</Button>
-          </TrackedLink>
+          <Button asChild className="mt-4">
+            <TrackedLink
+              href="/book-call"
+              eventName={analyticsEvents.ctaClickBookCall}
+              location={compact ? "resources_conversion_path" : "home_conversion_path"}
+              className="inline-flex"
+            >
+              Book a Discovery Call
+            </TrackedLink>
+          </Button>
         </div>
       </div>
     </div>

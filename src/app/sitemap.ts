@@ -3,6 +3,7 @@ import { caseStudies } from "@/content/case-studies";
 import { resources } from "@/content/resources";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const siteUpdatedAt = new Date("2026-04-28");
   const routes = [
     "",
     "/services",
@@ -21,21 +22,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = routes.map((route) => ({
     url: `https://enablecx.com${route}`,
-    lastModified: new Date(),
+    lastModified: siteUpdatedAt,
     changeFrequency: "weekly" as const,
     priority: route === "" ? 1 : 0.7,
   }));
 
   const caseStudyRoutes = caseStudies.map((item) => ({
     url: `https://enablecx.com/case-studies/${item.slug}`,
-    lastModified: new Date(),
+    lastModified: new Date(item.publishedDate),
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
 
   const resourceRoutes = resources.map((item) => ({
     url: `https://enablecx.com/resources/${item.slug}`,
-    lastModified: new Date(),
+    lastModified: new Date(item.publishedDate),
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));

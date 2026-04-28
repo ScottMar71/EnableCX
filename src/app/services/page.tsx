@@ -39,16 +39,16 @@ export default function ServicesPage() {
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             <Card>
-              <p className="text-sm font-semibold text-text-primary">Partners</p>
-              <p className="mt-2 text-sm text-text-secondary">
-                Increase revenue, reduce churn, lower support demand, and accelerate onboarding.
-              </p>
-            </Card>
-            <Card>
               <p className="text-sm font-semibold text-text-primary">Organisations</p>
               <p className="mt-2 text-sm text-text-secondary">
                 Improve sales, engagement, retention, and satisfaction while reducing costly
                 adoption gaps.
+              </p>
+            </Card>
+            <Card>
+              <p className="text-sm font-semibold text-text-primary">Partners</p>
+              <p className="mt-2 text-sm text-text-secondary">
+                Increase revenue, reduce churn, lower support demand, and accelerate onboarding.
               </p>
             </Card>
             <Card>

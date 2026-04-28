@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { TrackedLink } from "@/components/analytics/tracked-link";
 import { analyticsEvents } from "@/lib/analytics/events";
@@ -23,6 +24,13 @@ const services = [
   },
 ];
 
+const processIcons = [
+  { label: "Assess", src: "/icons/assess.svg" },
+  { label: "Design", src: "/icons/design.svg" },
+  { label: "Deliver", src: "/icons/deliver.svg" },
+  { label: "Reinforce", src: "/icons/reinforce.svg" },
+];
+
 export function ServicesGridSection() {
   return (
     <div className="space-y-8">
@@ -34,6 +42,17 @@ export function ServicesGridSection() {
           We design practical, role-based programmes around your real workflows so
           adoption becomes repeatable day-to-day behaviour, not a one-off launch activity.
         </p>
+        <ul className="flex flex-wrap gap-2 pt-1">
+          {processIcons.map((icon) => (
+            <li
+              key={icon.label}
+              className="inline-flex items-center gap-1.5 rounded-full border border-border-default bg-white px-3 py-1.5 text-xs font-medium text-text-secondary"
+            >
+              <Image src={icon.src} alt="" aria-hidden width={14} height={14} className="h-3.5 w-3.5 shrink-0" />
+              {icon.label}
+            </li>
+          ))}
+        </ul>
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         {services.map((service) => (

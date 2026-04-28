@@ -10,9 +10,9 @@ export default function NotFound() {
         <p className="text-text-secondary">
           The page you requested does not exist. Return to the homepage to continue.
         </p>
-        <Link href="/">
-          <Button>Go Home</Button>
-        </Link>
+        <Button asChild>
+          <Link href="/">Go Home</Link>
+        </Button>
       </div>
     </SectionShell>
   );

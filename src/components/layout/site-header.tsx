@@ -31,7 +31,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-20 border-b border-border-default bg-white/95 backdrop-blur">
       <div className="container-shell flex h-[72px] items-center justify-between gap-8">
         <Link href="/" aria-label={`${siteConfig.name} home`}>
-          <SiteLogo className="h-12 w-auto drop-shadow-[0_1px_2px_rgba(15,23,42,0.18)]" priority />
+          <SiteLogo className="h-12 w-auto" priority />
         </Link>
         <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">
           {siteConfig.nav.map((item) => (
@@ -56,13 +56,15 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="hidden md:block">
-          <TrackedLink
-            href={siteConfig.primaryCta.href}
-            eventName={analyticsEvents.ctaClickBookCall}
-            location="header"
-          >
-            <Button size="md">{siteConfig.primaryCta.label}</Button>
-          </TrackedLink>
+          <Button asChild size="md">
+            <TrackedLink
+              href={siteConfig.primaryCta.href}
+              eventName={analyticsEvents.ctaClickBookCall}
+              location="header"
+            >
+              {siteConfig.primaryCta.label}
+            </TrackedLink>
+          </Button>
         </div>
         <button
           type="button"
@@ -106,14 +108,16 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <TrackedLink
-              href={siteConfig.primaryCta.href}
-              eventName={analyticsEvents.ctaClickBookCall}
-              location="header_mobile"
-              className="mt-2 inline-flex"
-            >
-              <Button size="md">{siteConfig.primaryCta.label}</Button>
-            </TrackedLink>
+            <Button asChild size="md" className="mt-2">
+              <TrackedLink
+                href={siteConfig.primaryCta.href}
+                eventName={analyticsEvents.ctaClickBookCall}
+                location="header_mobile"
+                className="inline-flex"
+              >
+                {siteConfig.primaryCta.label}
+              </TrackedLink>
+            </Button>
           </nav>
         </div>
       ) : null}

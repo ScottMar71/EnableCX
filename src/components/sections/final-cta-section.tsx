@@ -11,24 +11,26 @@ export function FinalCTASection() {
         a practical training plan for your teams and platform goals.
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
-        <TrackedLink
-          href="/book-call"
-          className="inline-flex"
-          eventName={analyticsEvents.ctaClickBookCall}
-          location="final_cta"
-        >
-          <Button className="bg-white text-text-primary hover:bg-slate-200">
+        <Button asChild className="bg-white text-text-primary hover:bg-slate-200">
+          <TrackedLink
+            href="/book-call"
+            className="inline-flex"
+            eventName={analyticsEvents.ctaClickBookCall}
+            location="final_cta"
+          >
             Book a Discovery Call
-          </Button>
-        </TrackedLink>
-        <TrackedLink
-          href="/resources"
-          className="inline-flex"
-          eventName={analyticsEvents.ctaClickResources}
-          location="final_cta"
-        >
-          <Button variant="secondary">View Resources First</Button>
-        </TrackedLink>
+          </TrackedLink>
+        </Button>
+        <Button asChild variant="secondary">
+          <TrackedLink
+            href="/resources"
+            className="inline-flex"
+            eventName={analyticsEvents.ctaClickResources}
+            location="final_cta"
+          >
+            View Resources First
+          </TrackedLink>
+        </Button>
       </div>
     </div>
   );

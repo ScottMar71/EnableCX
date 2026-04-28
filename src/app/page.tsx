@@ -3,7 +3,6 @@ import { FinalCTASection } from "@/components/sections/final-cta-section";
 import { HeroSection } from "@/components/sections/hero-section";
 import { OutcomesSection } from "@/components/sections/outcomes-section";
 import { PainPointsSection } from "@/components/sections/pain-points-section";
-import { ProcessSection } from "@/components/sections/process-section";
 import { ServicesGridSection } from "@/components/sections/services-grid-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { CaseStudyFeatureSection } from "@/components/sections/case-study-feature-section";
@@ -40,9 +39,6 @@ export default function Home() {
       </SectionShell>
       <SectionShell subtle>
         <OutcomesSection />
-      </SectionShell>
-      <SectionShell>
-        <ProcessSection />
       </SectionShell>
       <SectionShell subtle>
         <CaseStudyFeatureSection />

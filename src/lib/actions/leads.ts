@@ -34,10 +34,18 @@ async function insertLead(input: LeadInput) {
   }
 }
 
-export async function submitBookCallLead(formData: FormData) {
+type SubmitLeadConfig = {
+  sourcePage: "/book-call" | "/contact";
+};
+
+async function submitLead(formData: FormData, { sourcePage }: SubmitLeadConfig) {
+  const successPath = `${sourcePage}?submitted=1`;
+  const validationErrorPath = `${sourcePage}?error=validation`;
+  const saveErrorPath = `${sourcePage}?error=save`;
+
   const honeypot = formData.get("website");
   if (typeof honeypot === "string" && honeypot.trim().length > 0) {
-    redirect("/book-call?submitted=1");
+    redirect(successPath);
   }
 
   const parsed = leadSchema.safeParse({
@@ -47,47 +55,26 @@ export async function submitBookCallLead(formData: FormData) {
     teamSize: formData.get("team_size"),
     serviceInterest: formData.get("service_interest"),
     message: formData.get("message"),
-    sourcePage: "/book-call",
+    sourcePage,
   });
 
   if (!parsed.success) {
-    redirect("/book-call?error=validation");
+    redirect(validationErrorPath);
   }
 
   try {
     await insertLead(parsed.data);
   } catch {
-    redirect("/book-call?error=save");
+    redirect(saveErrorPath);
   }
 
-  redirect("/book-call?submitted=1");
+  redirect(successPath);
+}
+
+export async function submitBookCallLead(formData: FormData) {
+  return submitLead(formData, { sourcePage: "/book-call" });
 }
 
 export async function submitContactLead(formData: FormData) {
-  const honeypot = formData.get("website");
-  if (typeof honeypot === "string" && honeypot.trim().length > 0) {
-    redirect("/contact?submitted=1");
-  }
-
-  const parsed = leadSchema.safeParse({
-    name: formData.get("name"),
-    email: formData.get("email"),
-    company: formData.get("company"),
-    teamSize: formData.get("team_size"),
-    serviceInterest: formData.get("service_interest"),
-    message: formData.get("message"),
-    sourcePage: "/contact",
-  });
-
-  if (!parsed.success) {
-    redirect("/contact?error=validation");
-  }
-
-  try {
-    await insertLead(parsed.data);
-  } catch {
-    redirect("/contact?error=save");
-  }
-
-  redirect("/contact?submitted=1");
+  return submitLead(formData, { sourcePage: "/contact" });
 }
