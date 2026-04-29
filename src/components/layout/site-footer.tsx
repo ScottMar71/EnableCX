@@ -1,37 +1,28 @@
 import Link from "next/link";
-import Image from "next/image";
+import { BriefcaseBusiness, Building2, Mail, Scale } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { ManageCookiesButton } from "@/components/consent/manage-cookies-button";
 import { SiteLogo } from "@/components/layout/site-logo";
-
-const footerIcons: Record<string, string> = {
-  Services: "/icons/services.svg",
-  About: "/icons/about.svg",
-  Contact: "/icons/contact.svg",
-};
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border-default bg-white py-12">
+    <footer className="border-t border-border-default bg-bg-elevated py-14">
       <div className="container-shell grid gap-8 md:grid-cols-4">
         <div className="space-y-3">
           <SiteLogo className="h-11 w-auto" />
           <p className="text-sm text-text-secondary">{siteConfig.description}</p>
-          <div className="space-y-1 text-sm text-text-secondary">
-            <p>Email: hello@enablecx.com</p>
+          <div className="space-y-2 rounded-md border border-border-default bg-bg-subtle px-4 py-3 text-sm text-text-secondary">
+            <p className="inline-flex items-center gap-2 font-medium text-text-primary">
+              <Mail className="h-4 w-4" aria-hidden />
+              hello@enablecx.com
+            </p>
             <p>Typical response time: within 1 business day</p>
           </div>
         </div>
 
         <div className="space-y-3">
           <p className="inline-flex items-center gap-1.5 text-sm font-semibold text-text-primary">
-            <Image
-              src={footerIcons.Services}
-              alt=""
-              aria-hidden
-              width={16}
-              height={16}
-              className="h-4 w-4 shrink-0"
-            />
+            <BriefcaseBusiness className="h-4 w-4" aria-hidden />
             Services
           </p>
           <div className="space-y-2">
@@ -48,7 +39,10 @@ export function SiteFooter() {
         </div>
 
         <div className="space-y-3">
-          <p className="text-sm font-semibold text-text-primary">Company</p>
+          <p className="inline-flex items-center gap-1.5 text-sm font-semibold text-text-primary">
+            <Building2 className="h-4 w-4" aria-hidden />
+            Company
+          </p>
           <div className="space-y-2">
             {siteConfig.footerLinks.company.map((item) => (
               <Link
@@ -56,16 +50,6 @@ export function SiteFooter() {
                 href={item.href}
                 className="flex items-center gap-1.5 text-sm text-text-secondary hover:text-text-primary"
               >
-                {footerIcons[item.label] ? (
-                  <Image
-                    src={footerIcons[item.label]}
-                    alt=""
-                    aria-hidden
-                    width={16}
-                    height={16}
-                    className="h-4 w-4 shrink-0"
-                  />
-                ) : null}
                 {item.label}
               </Link>
             ))}
@@ -73,7 +57,10 @@ export function SiteFooter() {
         </div>
 
         <div className="space-y-3">
-          <p className="text-sm font-semibold text-text-primary">Legal</p>
+          <p className="inline-flex items-center gap-1.5 text-sm font-semibold text-text-primary">
+            <Scale className="h-4 w-4" aria-hidden />
+            Legal
+          </p>
           <div className="space-y-2">
             {siteConfig.footerLinks.legal.map((item) => (
               <Link
@@ -85,6 +72,7 @@ export function SiteFooter() {
               </Link>
             ))}
           </div>
+          <ManageCookiesButton />
         </div>
       </div>
     </footer>

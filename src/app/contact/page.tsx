@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { FormField } from "@/components/forms/form-field";
 import { Select } from "@/components/ui/select";
 import { submitContactLead } from "@/lib/actions/leads";
+import { MessageSquareMore, ShieldCheck } from "lucide-react";
 
 type ContactPageProps = {
   searchParams: Promise<{ submitted?: string; error?: string }>;
@@ -29,6 +30,10 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         title="Contact"
         description="Need support with SaaS, CCaaS, or UCaaS training? Send us a message."
       />
+      <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-elevated px-3 py-1.5 text-xs font-semibold text-brand-primary">
+        <MessageSquareMore className="h-3.5 w-3.5" aria-hidden />
+        We respond within one business day
+      </p>
       {submitted ? (
         <p
           role="status"
@@ -49,7 +54,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
       ) : null}
       <form
         action={submitContactLead}
-        className="mt-10 grid max-w-2xl gap-5 rounded-md border border-border-default bg-white p-6"
+        className="mt-10 grid max-w-2xl gap-5 rounded-lg border border-border-default bg-bg-elevated p-6 shadow-[var(--shadow-sm)]"
       >
         <input
           type="text"
@@ -87,6 +92,10 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         <Button type="submit" className="w-fit">
           Send Message
         </Button>
+        <p className="inline-flex items-center gap-2 text-xs text-text-muted">
+          <ShieldCheck className="h-3.5 w-3.5 text-brand-primary" aria-hidden />
+          Your details are used only to respond to this enquiry.
+        </p>
       </form>
     </SectionShell>
   );

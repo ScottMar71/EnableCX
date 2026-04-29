@@ -1,4 +1,5 @@
 import { Card } from "@/components/ui/card";
+import { Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -18,11 +19,16 @@ const testimonials = [
 export function TestimonialsSection() {
   return (
     <div className="space-y-8">
-      <h2 className="text-3xl font-semibold text-text-primary">What teams say after delivery</h2>
+      <h2 className="text-balance text-3xl font-semibold text-text-primary">
+        What teams say after delivery
+      </h2>
       <div className="grid gap-4 md:grid-cols-2">
         {testimonials.map((testimonial) => (
           <Card key={testimonial.quote} variant="testimonial">
-            <p className="text-sm text-text-secondary">&ldquo;{testimonial.quote}&rdquo;</p>
+            <Quote className="h-5 w-5 text-brand-accent" aria-hidden />
+            <p className="mt-3 text-base text-text-secondary md:text-lg">
+              &ldquo;{testimonial.quote}&rdquo;
+            </p>
             <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-text-primary">
               {testimonial.author}
             </p>

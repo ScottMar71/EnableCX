@@ -13,6 +13,7 @@ export function SectionShell({ children, className, subtle }: SectionShellProps)
       className={cn(
         "py-16 md:py-24",
         subtle ? "bg-bg-subtle" : "bg-bg-base",
+        "section-divider",
         className
       )}
     >
