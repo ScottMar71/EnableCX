@@ -9,6 +9,7 @@ import { TrackedLink } from "@/components/analytics/tracked-link";
 import { analyticsEvents } from "@/lib/analytics/events";
 import { Accordion } from "@/components/ui/accordion";
 import { JsonLd } from "@/components/seo/json-ld";
+import { ArrowRight, CircleCheckBig, Lightbulb, ListChecks } from "lucide-react";
 
 type ResourceDetailProps = {
   params: Promise<{ slug: string }>;
@@ -92,10 +93,10 @@ export default async function ResourceDetailPage({ params }: ResourceDetailProps
           <p className="text-sm font-medium text-brand-primary">
             {article.category} · {article.readTime}
           </p>
-          <h1 className="text-4xl font-semibold text-text-primary md:text-5xl">
+          <h1 className="text-balance text-4xl font-semibold text-text-primary md:text-5xl">
             {article.title}
           </h1>
-          <p className="text-lg text-text-secondary">{article.excerpt}</p>
+          <p className="text-pretty text-lg text-text-secondary">{article.excerpt}</p>
           <div className="space-y-4">
             {article.body.map((paragraph) => (
               <p key={paragraph} className="prose-shell text-text-secondary">
@@ -103,18 +104,25 @@ export default async function ResourceDetailPage({ params }: ResourceDetailProps
               </p>
             ))}
           </div>
-          <section className="space-y-3 rounded-md border border-border-default bg-slate-50 p-5">
-            <h2 className="text-xl font-semibold text-text-primary">Key takeaways</h2>
+          <section className="space-y-3 rounded-md border border-border-default bg-bg-subtle p-5">
+            <h2 className="inline-flex items-center gap-2 text-xl font-semibold text-text-primary">
+              <Lightbulb className="h-5 w-5 text-brand-accent" aria-hidden />
+              Key takeaways
+            </h2>
             <ul className="space-y-2">
               {article.keyTakeaways.map((takeaway) => (
-                <li key={takeaway} className="text-sm text-text-secondary">
-                  - {takeaway}
+                <li key={takeaway} className="inline-flex items-start gap-2 text-sm text-text-secondary">
+                  <CircleCheckBig className="mt-0.5 h-4 w-4 shrink-0 text-brand-primary" aria-hidden />
+                  {takeaway}
                 </li>
               ))}
             </ul>
           </section>
-          <section className="space-y-3 rounded-md border border-border-default bg-white p-5">
-            <h2 className="text-xl font-semibold text-text-primary">Related next steps</h2>
+          <section className="space-y-3 rounded-md border border-border-default bg-bg-elevated p-5">
+            <h2 className="inline-flex items-center gap-2 text-xl font-semibold text-text-primary">
+              <ArrowRight className="h-5 w-5 text-brand-accent" aria-hidden />
+              Related next steps
+            </h2>
             <div className="flex flex-wrap gap-3">
               <Link
                 href={article.relatedServiceHref}
@@ -127,7 +135,7 @@ export default async function ResourceDetailPage({ params }: ResourceDetailProps
                   href="/book-call"
                   eventName={analyticsEvents.ctaClickBookCall}
                   location="resource_detail"
-                  className="inline-flex text-[#ffffff]"
+                  className="inline-flex text-white"
                 >
                   Book a Discovery Call
                 </TrackedLink>
@@ -138,15 +146,18 @@ export default async function ResourceDetailPage({ params }: ResourceDetailProps
                 <Link
                   key={resource.slug}
                   href={`/resources/${resource.slug}`}
-                  className="rounded-md border border-border-default bg-slate-50 px-4 py-3 text-sm text-text-secondary hover:border-brand-primary"
+                  className="rounded-md border border-border-default bg-bg-subtle px-4 py-3 text-sm text-text-secondary transition-colors hover:border-brand-primary"
                 >
                   {resource.title}
                 </Link>
               ))}
             </div>
           </section>
-          <section className="space-y-3 rounded-md border border-border-default bg-white p-5">
-            <h2 className="text-xl font-semibold text-text-primary">Frequently asked questions</h2>
+          <section className="space-y-3 rounded-md border border-border-default bg-bg-elevated p-5">
+            <h2 className="inline-flex items-center gap-2 text-xl font-semibold text-text-primary">
+              <ListChecks className="h-5 w-5 text-brand-accent" aria-hidden />
+              Frequently asked questions
+            </h2>
             <Accordion items={article.faqs} />
           </section>
         </article>

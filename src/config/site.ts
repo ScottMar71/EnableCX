@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "EnableCX",
   description:
-    "Practical SaaS, CCaaS, and UCaaS training programmes that improve platform adoption, team confidence, and customer outcomes.",
+    "Practical training programmes that accelerate platform adoption, strengthen team confidence, and improve customer outcomes.",
   nav: [
     { label: "Services", href: "/services" },
     { label: "Case Studies", href: "/case-studies" },
@@ -10,7 +10,7 @@ export const siteConfig = {
     { label: "Contact", href: "/contact" },
   ],
   primaryCta: {
-    label: "Book a Call",
+    label: "Book a Discovery Call",
     href: "/book-call",
   },
   footerLinks: {

@@ -21,8 +21,8 @@ export function FormField({ id, label, hint, error, required = false, children }
     : children;
 
   return (
-    <div className="space-y-2">
-      <label htmlFor={id} className="text-sm font-medium text-text-primary">
+    <div className="space-y-2.5">
+      <label htmlFor={id} className="text-sm font-semibold text-text-primary">
         {label}
         {required ? (
           <span className="ml-1 text-state-error" aria-hidden="true">

@@ -3,6 +3,7 @@ import { PageIntro } from "@/components/sections/page-intro";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Card } from "@/components/ui/card";
 import { FinalCTASection } from "@/components/sections/final-cta-section";
+import { ArrowUpRight, Building2, Handshake, Lightbulb, Target, Users } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About EnableCX",
@@ -21,8 +22,12 @@ export default function AboutPage() {
       </SectionShell>
       <SectionShell subtle>
         <div className="space-y-8">
-          <div className="space-y-3">
-            <h2 className="text-3xl font-semibold text-text-primary">What We Do</h2>
+          <div className="space-y-3 rounded-lg border border-border-default bg-bg-elevated p-6 shadow-[var(--shadow-sm)]">
+            <p className="inline-flex items-center gap-2 text-sm font-semibold text-brand-primary">
+              <Lightbulb className="h-4 w-4" aria-hidden />
+              What we do
+            </p>
+            <h2 className="text-balance text-3xl font-semibold text-text-primary">What We Do</h2>
             <p className="text-text-secondary">
               We offer AI specialist training and hands-on, value-driven enablement designed to
               help partners, customers, and internal teams succeed in an increasingly digital,
@@ -41,24 +46,28 @@ export default function AboutPage() {
             <h3 className="text-2xl font-semibold text-text-primary">How We Create Impact</h3>
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
-                <p className="text-sm text-text-secondary">
+                <p className="inline-flex items-center gap-2 text-sm text-text-secondary">
+                  <ArrowUpRight className="h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
                   Increase revenue by enabling better sales conversations and product
                   understanding.
                 </p>
               </Card>
               <Card>
-                <p className="text-sm text-text-secondary">
+                <p className="inline-flex items-center gap-2 text-sm text-text-secondary">
+                  <Target className="h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
                   Reduce churn through stronger customer engagement and confidence.
                 </p>
               </Card>
               <Card>
-                <p className="text-sm text-text-secondary">
+                <p className="inline-flex items-center gap-2 text-sm text-text-secondary">
+                  <Users className="h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
                   Improve customer experience by equipping teams with the skills to deliver
                   consistently high-quality service.
                 </p>
               </Card>
               <Card>
-                <p className="text-sm text-text-secondary">
+                <p className="inline-flex items-center gap-2 text-sm text-text-secondary">
+                  <Building2 className="h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
                   Drive adoption of platforms and tools, ensuring organisations realise full ROI.
                 </p>
               </Card>
@@ -114,14 +123,20 @@ export default function AboutPage() {
             </p>
             <div className="grid gap-4 md:grid-cols-3">
               <Card>
-                <h4 className="text-sm font-semibold text-text-primary">For Partners</h4>
+                <h4 className="inline-flex items-center gap-2 text-sm font-semibold text-text-primary">
+                  <Handshake className="h-4 w-4 text-brand-accent" aria-hidden />
+                  For Partners
+                </h4>
                 <p className="mt-2 text-sm text-text-secondary">
                   Effective training drives increased revenue, reduces churn and support demand,
                   and speeds up onboarding to build stronger, more sustainable relationships.
                 </p>
               </Card>
               <Card>
-                <h4 className="text-sm font-semibold text-text-primary">For Organisations</h4>
+                <h4 className="inline-flex items-center gap-2 text-sm font-semibold text-text-primary">
+                  <Building2 className="h-4 w-4 text-brand-accent" aria-hidden />
+                  For Organisations
+                </h4>
                 <p className="mt-2 text-sm text-text-secondary">
                   It improves sales performance, customer engagement, retention, and satisfaction
                   while reducing support tickets, shortening onboarding time, and preventing costly
@@ -129,7 +144,10 @@ export default function AboutPage() {
                 </p>
               </Card>
               <Card>
-                <h4 className="text-sm font-semibold text-text-primary">For Employees</h4>
+                <h4 className="inline-flex items-center gap-2 text-sm font-semibold text-text-primary">
+                  <Users className="h-4 w-4 text-brand-accent" aria-hidden />
+                  For Employees
+                </h4>
                 <p className="mt-2 text-sm text-text-secondary">
                   Training increases productivity, confidence, consistency, and technical capability
                   while reducing supervision overhead and improving team performance and retention.

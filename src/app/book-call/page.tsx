@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { FormField } from "@/components/forms/form-field";
 import { submitBookCallLead } from "@/lib/actions/leads";
+import { CalendarClock, ShieldCheck } from "lucide-react";
 
 type BookCallPageProps = {
   searchParams: Promise<{ submitted?: string; error?: string }>;
@@ -29,6 +30,10 @@ export default async function BookCallPage({ searchParams }: BookCallPageProps) 
         title="Book a Discovery Call"
         description="Share a few details and we will follow up with the best next step for your team."
       />
+      <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-elevated px-3 py-1.5 text-xs font-semibold text-brand-primary">
+        <CalendarClock className="h-3.5 w-3.5" aria-hidden />
+        Structured discovery tailored to your rollout stage
+      </p>
       {submitted ? (
         <p
           role="status"
@@ -49,7 +54,7 @@ export default async function BookCallPage({ searchParams }: BookCallPageProps) 
       ) : null}
       <form
         action={submitBookCallLead}
-        className="mt-10 grid max-w-2xl gap-5 rounded-md border border-border-default bg-white p-6"
+        className="mt-10 grid max-w-2xl gap-5 rounded-lg border border-border-default bg-bg-elevated p-6 shadow-[var(--shadow-sm)]"
       >
         <input
           type="text"
@@ -89,6 +94,10 @@ export default async function BookCallPage({ searchParams }: BookCallPageProps) 
         <Button type="submit" className="w-fit">
           Submit Request
         </Button>
+        <p className="inline-flex items-center gap-2 text-xs text-text-muted">
+          <ShieldCheck className="h-3.5 w-3.5 text-brand-primary" aria-hidden />
+          We only use this information to prepare your discovery call.
+        </p>
       </form>
     </SectionShell>
   );

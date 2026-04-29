@@ -8,17 +8,17 @@ type CardProps = HTMLAttributes<HTMLDivElement> & {
 };
 
 const cardVariantClasses: Record<CardVariant, string> = {
-  service: "bg-white",
-  testimonial: "bg-white",
-  "case-study": "bg-white",
-  metric: "bg-bg-subtle",
+  service: "bg-bg-elevated",
+  testimonial: "bg-bg-elevated",
+  "case-study": "bg-bg-elevated",
+  metric: "bg-brand-accent-soft/40",
 };
 
 export function Card({ className, variant = "service", ...props }: CardProps) {
   return (
     <div
       className={cn(
-        "rounded-md border border-border-default p-6 shadow-sm",
+        "rounded-lg border border-border-default p-6 shadow-[var(--shadow-sm)] transition-all duration-200 ease-out",
         cardVariantClasses[variant],
         className
       )}
