@@ -9,7 +9,7 @@ export function SiteFooter() {
     <footer className="border-t border-border-default bg-bg-elevated py-14">
       <div className="container-shell grid gap-8 md:grid-cols-4">
         <div className="space-y-3">
-          <SiteLogo className="h-11 w-auto" />
+          <SiteLogo className="h-14 w-auto" />
           <p className="text-sm text-text-secondary">{siteConfig.description}</p>
           <div className="space-y-2 rounded-md border border-border-default bg-bg-subtle px-4 py-3 text-sm text-text-secondary">
             <p className="inline-flex items-center gap-2 font-medium text-text-primary">

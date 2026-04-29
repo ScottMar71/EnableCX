@@ -13,9 +13,9 @@ export function HeroSection() {
           Turn platform rollout into confident, repeatable daily execution.
         </h1>
         <p className="prose-shell text-pretty text-lg text-text-secondary">
-          EnableCX helps support, success, and operations teams adopt SaaS, CCaaS, and
-          UCaaS platforms faster with role-based training that reduces ramp time,
-          standardises workflows, and improves customer experience consistency.
+          EnableCX helps support, success, and operations teams accelerate platform
+          adoption with role-based training that reduces ramp time, standardises
+          workflows, and enables them to better support their customers.
         </p>
         <ul className="grid gap-2 text-sm font-medium text-text-secondary sm:grid-cols-2">
           <li className="inline-flex items-center gap-2">
@@ -58,7 +58,6 @@ export function HeroSection() {
             href="/book-call"
             eventName={analyticsEvents.ctaClickBookCall}
             location="home_hero"
-            className="text-white"
           >
             Book a Discovery Call
             <ArrowRight className="h-4 w-4" aria-hidden />

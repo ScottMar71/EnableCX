@@ -22,13 +22,10 @@ export function FinalCTASection() {
         No hard sell. Practical recommendations tailored to your context.
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
-        <Button
-          asChild
-          className="bg-brand-accent text-white hover:bg-[#e86a13]"
-        >
+        <Button asChild>
           <TrackedLink
             href="/book-call"
-            className="inline-flex text-white"
+            className="inline-flex"
             eventName={analyticsEvents.ctaClickBookCall}
             location="final_cta"
           >

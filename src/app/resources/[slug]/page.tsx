@@ -135,7 +135,7 @@ export default async function ResourceDetailPage({ params }: ResourceDetailProps
                   href="/book-call"
                   eventName={analyticsEvents.ctaClickBookCall}
                   location="resource_detail"
-                  className="inline-flex text-white"
+                  className="inline-flex"
                 >
                   Book a Discovery Call
                 </TrackedLink>

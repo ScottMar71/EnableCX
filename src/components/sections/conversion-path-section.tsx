@@ -46,7 +46,7 @@ export function ConversionPathSection({ compact = false }: ConversionPathSection
               href="/book-call"
               eventName={analyticsEvents.ctaClickBookCall}
               location={compact ? "resources_conversion_path" : "home_conversion_path"}
-              className="inline-flex text-white"
+              className="inline-flex"
             >
               Book a Discovery Call
               <ArrowRight className="h-4 w-4" aria-hidden />

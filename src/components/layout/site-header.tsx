@@ -29,9 +29,9 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-20 border-b border-border-default bg-bg-elevated/95 backdrop-blur">
-      <div className="container-shell flex h-[72px] items-center justify-between gap-8">
+      <div className="container-shell flex h-[84px] items-center justify-between gap-8">
         <Link href="/" aria-label={`${siteConfig.name} home`}>
-          <SiteLogo className="h-12 w-auto" priority />
+          <SiteLogo className="h-14 w-auto" priority />
         </Link>
         <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">
           {siteConfig.nav.map((item) => {
@@ -55,7 +55,7 @@ export function SiteHeader() {
               href={siteConfig.primaryCta.href}
               eventName={analyticsEvents.ctaClickBookCall}
               location="header"
-              className="inline-flex text-white"
+              className="inline-flex"
             >
               {siteConfig.primaryCta.label}
             </TrackedLink>
@@ -95,7 +95,7 @@ export function SiteHeader() {
                 href={siteConfig.primaryCta.href}
                 eventName={analyticsEvents.ctaClickBookCall}
                 location="header_mobile"
-                className="inline-flex text-white"
+                className="inline-flex"
               >
                 {siteConfig.primaryCta.label}
               </TrackedLink>
