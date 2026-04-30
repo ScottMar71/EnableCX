@@ -13,7 +13,7 @@ export function SiteFooter() {
           <p className="text-sm text-text-secondary">{siteConfig.description}</p>
           <div className="space-y-2 rounded-md border border-border-default bg-bg-subtle px-4 py-3 text-sm text-text-secondary">
             <p className="inline-flex items-center gap-2 font-medium text-text-primary">
-              <Mail className="h-4 w-4" aria-hidden />
+              <Mail className="h-4 w-4 text-icon" aria-hidden />
               hello@enablecx.com
             </p>
             <p>Typical response time: within 1 business day</p>
@@ -22,7 +22,7 @@ export function SiteFooter() {
 
         <div className="space-y-3">
           <p className="inline-flex items-center gap-1.5 text-sm font-semibold text-text-primary">
-            <BriefcaseBusiness className="h-4 w-4" aria-hidden />
+            <BriefcaseBusiness className="h-4 w-4 text-icon" aria-hidden />
             Services
           </p>
           <div className="space-y-2">
@@ -40,7 +40,7 @@ export function SiteFooter() {
 
         <div className="space-y-3">
           <p className="inline-flex items-center gap-1.5 text-sm font-semibold text-text-primary">
-            <Building2 className="h-4 w-4" aria-hidden />
+            <Building2 className="h-4 w-4 text-icon" aria-hidden />
             Company
           </p>
           <div className="space-y-2">
@@ -58,7 +58,7 @@ export function SiteFooter() {
 
         <div className="space-y-3">
           <p className="inline-flex items-center gap-1.5 text-sm font-semibold text-text-primary">
-            <Scale className="h-4 w-4" aria-hidden />
+            <Scale className="h-4 w-4 text-icon" aria-hidden />
             Legal
           </p>
           <div className="space-y-2">
@@ -71,8 +71,8 @@ export function SiteFooter() {
                 {item.label}
               </Link>
             ))}
+            <ManageCookiesButton />
           </div>
-          <ManageCookiesButton />
         </div>
       </div>
     </footer>
