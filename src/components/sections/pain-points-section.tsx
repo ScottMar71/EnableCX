@@ -30,7 +30,7 @@ export function PainPointsSection() {
             key={point.label}
             className="inline-flex items-start gap-2 rounded-md border border-border-default bg-bg-elevated px-4 py-3 text-sm text-text-secondary shadow-[var(--shadow-sm)]"
           >
-            <point.icon className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
+            <point.icon className="mt-0.5 h-4 w-4 shrink-0 text-icon" aria-hidden />
             {point.label}
           </li>
         ))}

@@ -21,7 +21,7 @@ export function Accordion({ items }: AccordionProps) {
           <summary className="flex cursor-pointer list-none items-start justify-between gap-3 pr-1 font-medium text-text-primary marker:hidden">
             <span>{item.question}</span>
             <ChevronDown
-              className="mt-0.5 h-4 w-4 shrink-0 text-brand-primary transition-transform duration-200 group-open:rotate-180"
+              className="mt-0.5 h-4 w-4 shrink-0 text-icon transition-transform duration-200 group-open:rotate-180"
               aria-hidden
             />
           </summary>

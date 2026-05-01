@@ -7,6 +7,12 @@ export type ResourceArticle = {
   body: string[];
   keyTakeaways: string[];
   relatedServiceHref: string;
+  /** Optional tool promo for growth cross-links (e.g. calculators). */
+  relatedTool?: {
+    href: string;
+    title: string;
+    description: string;
+  };
   publishedDate: string;
   faqs: { id: string; question: string; answer: string }[];
 };
@@ -33,6 +39,12 @@ export const resources: ResourceArticle[] = [
       "Use 30/60/90-day reinforcement checkpoints to sustain adoption.",
     ],
     relatedServiceHref: "/services/saas-training",
+    relatedTool: {
+      href: "/resources/ramp-time-calculator",
+      title: "Estimate onboarding ramp cost",
+      description:
+        "Put adoption timelines next to payroll impact—see how shorter ramp translates into savings.",
+    },
     publishedDate: "2026-04-28",
     faqs: [
       {
@@ -70,6 +82,12 @@ export const resources: ResourceArticle[] = [
       "Run calibration loops in the first 60 days to maintain quality consistency.",
     ],
     relatedServiceHref: "/services/ccaas-training",
+    relatedTool: {
+      href: "/resources/ramp-time-calculator",
+      title: "Model agent ramp cost (£)",
+      description:
+        "Benchmark cohort onboarding against salary and throughput—then compare savings if ramp drops.",
+    },
     publishedDate: "2026-04-28",
     faqs: [
       {
@@ -107,6 +125,12 @@ export const resources: ResourceArticle[] = [
       "Use structured post-launch support to reduce avoidable tickets.",
     ],
     relatedServiceHref: "/services/ucaas-training",
+    relatedTool: {
+      href: "/resources/ramp-time-calculator",
+      title: "Quantify support ramp load after rollout",
+      description:
+        "Pair peak ticket demand with payroll-modeled ramp cost when onboarding waves stack post-launch.",
+    },
     publishedDate: "2026-04-28",
     faqs: [
       {

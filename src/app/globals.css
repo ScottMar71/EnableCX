@@ -12,6 +12,12 @@
   --brand-hover: #0b5c56;
   --brand-accent: #f97316;
   --brand-accent-soft: #ffedd5;
+  --button-primary: #0aa09b;
+  --button-primary-hover: #087f7a;
+  --button-primary-active: #066e6a;
+  --button-primary-focus: #38bdf8;
+  /* Decorative / UI icons (Lucide, etc.) */
+  --icon: #0aa09b;
   --success: #16a34a;
   --warning: #f59e0b;
   --error: #dc2626;
@@ -34,6 +40,11 @@
   --color-brand-primary-hover: var(--brand-hover);
   --color-brand-accent: var(--brand-accent);
   --color-brand-accent-soft: var(--brand-accent-soft);
+  --color-btn-primary: var(--button-primary);
+  --color-btn-primary-hover: var(--button-primary-hover);
+  --color-btn-primary-active: var(--button-primary-active);
+  --color-btn-primary-focus: var(--button-primary-focus);
+  --color-icon: var(--icon);
   --color-state-success: var(--success);
   --color-state-warning: var(--warning);
   --color-state-error: var(--error);

@@ -24,6 +24,9 @@ cp .env.example .env.local
 ```
 
 3. Fill these values in `.env.local`:
+- `NEXT_PUBLIC_SITE_URL` (production origin, e.g. `https://enablecx.com`; drives canonicals and sitemap)
+- `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` (optional; Search Console HTML-tag value only)
+- `ALLOW_PREVIEW_INDEXING` (optional; set to `true` only if a **preview** deploy should be indexable)
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
 - `SUPABASE_SERVICE_ROLE_KEY`
@@ -42,6 +45,7 @@ npm run dev
 - `npm run lint` - Run ESLint
 - `npm run typecheck` - Run TypeScript check
 - `npm run build` - Build production bundle
+- `npm run seo:urls` - Print URLs for Meta / LinkedIn / X sharing debuggers
 
 ## CI
 
@@ -60,8 +64,13 @@ GitHub Actions workflow is configured at `.github/workflows/ci.yml` and runs:
 ## Vercel
 
 - Project has been linked to Vercel (`.vercel/project.json`).
+- **SEO / URLs:** In the Vercel dashboard, set **`NEXT_PUBLIC_SITE_URL`** for Production (see `docs/seo-launch-checklist.md`).
 - Environment sync can be run with:
 
 ```bash
 npx vercel pull --yes --environment=development
 ```
+
+## SEO checklist
+
+See **`docs/seo-launch-checklist.md`** for Search Console, social preview tools, preview `robots` behavior, and when to bump sitemap dates.

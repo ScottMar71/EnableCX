@@ -45,7 +45,7 @@ This document defines project-wide conventions to keep UI behavior, accessibilit
 ## 7. Sitemap Freshness
 
 - Avoid `new Date()` on every route during sitemap generation.
-- Use stable content dates (`publishedDate`) or explicit site update timestamps.
+- Use stable content dates (`publishedDate`) or bump **`marketingSiteLastModified`** in `src/content/site-version.ts` when static marketing pages change materially.
 
 ## 8. Server Action Consistency
 

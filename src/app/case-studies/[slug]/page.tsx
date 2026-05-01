@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { caseStudies } from "@/content/case-studies";
 import { TrackedLink } from "@/components/analytics/tracked-link";
 import { analyticsEvents } from "@/lib/analytics/events";
+import { absoluteUrl } from "@/lib/site";
 import { ArrowRight, CircleCheckBig, Quote } from "lucide-react";
 
 type CaseStudyDetailProps = {
@@ -20,22 +21,22 @@ export async function generateMetadata({
 
   return {
     title: caseStudy.title,
-    description: caseStudy.challenge,
+    description: caseStudy.excerpt,
     alternates: {
       canonical: `/case-studies/${caseStudy.slug}`,
     },
     openGraph: {
       type: "article",
-      url: `https://enablecx.com/case-studies/${caseStudy.slug}`,
+      url: absoluteUrl(`/case-studies/${caseStudy.slug}`),
       title: caseStudy.title,
-      description: caseStudy.challenge,
+      description: caseStudy.excerpt,
       publishedTime: caseStudy.publishedDate,
       siteName: "EnableCX",
     },
     twitter: {
       card: "summary_large_image",
       title: caseStudy.title,
-      description: caseStudy.challenge,
+      description: caseStudy.excerpt,
     },
   };
 }
@@ -83,7 +84,7 @@ export default async function CaseStudyDetailPage({ params }: CaseStudyDetailPro
                 key={result}
                 className="inline-flex items-start gap-2 rounded-md border border-border-default bg-bg-subtle px-4 py-3 text-text-secondary"
               >
-                <CircleCheckBig className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
+                <CircleCheckBig className="mt-0.5 h-4 w-4 shrink-0 text-icon" aria-hidden />
                 {result}
               </li>
             ))}
@@ -91,7 +92,7 @@ export default async function CaseStudyDetailPage({ params }: CaseStudyDetailPro
         </section>
 
         <blockquote className="rounded-md border-l-4 border-brand-primary bg-bg-elevated p-5 text-text-secondary shadow-[var(--shadow-sm)]">
-          <Quote className="mb-2 h-5 w-5 text-brand-accent" aria-hidden />
+          <Quote className="mb-2 h-5 w-5 text-icon" aria-hidden />
           &ldquo;{caseStudy.quote}&rdquo;
           <footer className="mt-3 text-xs font-semibold uppercase tracking-wide text-text-primary">
             {caseStudy.quoteAttribution}
@@ -103,7 +104,7 @@ export default async function CaseStudyDetailPage({ params }: CaseStudyDetailPro
             href="/book-call"
             eventName={analyticsEvents.ctaClickBookCall}
             location="case_study_detail"
-            className="inline-flex text-white"
+            className="inline-flex"
           >
             Book a Discovery Call
             <ArrowRight className="h-4 w-4" aria-hidden />

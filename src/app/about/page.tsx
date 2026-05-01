@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
 import { PageIntro } from "@/components/sections/page-intro";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Card } from "@/components/ui/card";
 import { FinalCTASection } from "@/components/sections/final-cta-section";
+import { staticSeo } from "@/lib/seo";
 import { ArrowUpRight, Building2, Handshake, Lightbulb, Target, Users } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "About EnableCX",
+export const metadata = staticSeo({
+  path: "/about",
+  title: "About",
   description:
     "Learn how EnableCX helps teams increase adoption and performance across SaaS, CCaaS, and UCaaS platforms through practical training.",
-};
+});
 
 export default function AboutPage() {
   return (
@@ -24,7 +25,7 @@ export default function AboutPage() {
         <div className="space-y-8">
           <div className="space-y-3 rounded-lg border border-border-default bg-bg-elevated p-6 shadow-[var(--shadow-sm)]">
             <p className="inline-flex items-center gap-2 text-sm font-semibold text-brand-primary">
-              <Lightbulb className="h-4 w-4" aria-hidden />
+              <Lightbulb className="h-4 w-4 text-icon" aria-hidden />
               What we do
             </p>
             <h2 className="text-balance text-3xl font-semibold text-text-primary">What We Do</h2>
@@ -47,27 +48,27 @@ export default function AboutPage() {
             <div className="grid gap-4 md:grid-cols-2">
               <Card>
                 <p className="inline-flex items-center gap-2 text-sm text-text-secondary">
-                  <ArrowUpRight className="h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
+                  <ArrowUpRight className="h-4 w-4 shrink-0 text-icon" aria-hidden />
                   Increase revenue by enabling better sales conversations and product
                   understanding.
                 </p>
               </Card>
               <Card>
                 <p className="inline-flex items-center gap-2 text-sm text-text-secondary">
-                  <Target className="h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
+                  <Target className="h-4 w-4 shrink-0 text-icon" aria-hidden />
                   Reduce churn through stronger customer engagement and confidence.
                 </p>
               </Card>
               <Card>
                 <p className="inline-flex items-center gap-2 text-sm text-text-secondary">
-                  <Users className="h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
+                  <Users className="h-4 w-4 shrink-0 text-icon" aria-hidden />
                   Improve customer experience by equipping teams with the skills to deliver
                   consistently high-quality service.
                 </p>
               </Card>
               <Card>
                 <p className="inline-flex items-center gap-2 text-sm text-text-secondary">
-                  <Building2 className="h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
+                  <Building2 className="h-4 w-4 shrink-0 text-icon" aria-hidden />
                   Drive adoption of platforms and tools, ensuring organisations realise full ROI.
                 </p>
               </Card>
@@ -124,7 +125,7 @@ export default function AboutPage() {
             <div className="grid gap-4 md:grid-cols-3">
               <Card>
                 <h4 className="inline-flex items-center gap-2 text-sm font-semibold text-text-primary">
-                  <Handshake className="h-4 w-4 text-brand-accent" aria-hidden />
+                  <Handshake className="h-4 w-4 text-icon" aria-hidden />
                   For Partners
                 </h4>
                 <p className="mt-2 text-sm text-text-secondary">
@@ -134,7 +135,7 @@ export default function AboutPage() {
               </Card>
               <Card>
                 <h4 className="inline-flex items-center gap-2 text-sm font-semibold text-text-primary">
-                  <Building2 className="h-4 w-4 text-brand-accent" aria-hidden />
+                  <Building2 className="h-4 w-4 text-icon" aria-hidden />
                   For Organisations
                 </h4>
                 <p className="mt-2 text-sm text-text-secondary">
@@ -145,7 +146,7 @@ export default function AboutPage() {
               </Card>
               <Card>
                 <h4 className="inline-flex items-center gap-2 text-sm font-semibold text-text-primary">
-                  <Users className="h-4 w-4 text-brand-accent" aria-hidden />
+                  <Users className="h-4 w-4 text-icon" aria-hidden />
                   For Employees
                 </h4>
                 <p className="mt-2 text-sm text-text-secondary">

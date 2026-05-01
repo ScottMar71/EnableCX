@@ -29,9 +29,9 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-20 border-b border-border-default bg-bg-elevated/95 backdrop-blur">
-      <div className="container-shell flex h-[72px] items-center justify-between gap-8">
+      <div className="container-shell flex h-[84px] items-center justify-between gap-8">
         <Link href="/" aria-label={`${siteConfig.name} home`}>
-          <SiteLogo className="h-12 w-auto" priority />
+          <SiteLogo className="h-14 w-auto" priority />
         </Link>
         <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">
           {siteConfig.nav.map((item) => {
@@ -43,7 +43,7 @@ export function SiteHeader() {
                 aria-current={isCurrentPath(item.href) ? "page" : undefined}
                 className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium text-text-secondary transition-colors hover:bg-bg-subtle hover:text-text-primary aria-[current=page]:bg-brand-primary/10 aria-[current=page]:text-brand-primary"
               >
-                {Icon ? <Icon className="h-4 w-4 shrink-0" aria-hidden /> : null}
+                {Icon ? <Icon className="h-4 w-4 shrink-0 text-icon" aria-hidden /> : null}
                 {item.label}
               </Link>
             );
@@ -55,7 +55,7 @@ export function SiteHeader() {
               href={siteConfig.primaryCta.href}
               eventName={analyticsEvents.ctaClickBookCall}
               location="header"
-              className="inline-flex text-white"
+              className="inline-flex"
             >
               {siteConfig.primaryCta.label}
             </TrackedLink>
@@ -69,7 +69,7 @@ export function SiteHeader() {
           aria-controls="mobile-navigation"
           onClick={() => setMobileMenuOpen((open) => !open)}
         >
-          {mobileMenuOpen ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
+          {mobileMenuOpen ? <X className="h-5 w-5 text-icon" aria-hidden /> : <Menu className="h-5 w-5 text-icon" aria-hidden />}
         </button>
       </div>
       {mobileMenuOpen ? (
@@ -85,7 +85,7 @@ export function SiteHeader() {
                   className="inline-flex items-center gap-2 rounded-md px-2 py-1 text-sm font-medium text-text-secondary transition-colors hover:bg-bg-subtle hover:text-text-primary aria-[current=page]:text-brand-primary"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {Icon ? <Icon className="h-4 w-4 shrink-0" aria-hidden /> : null}
+                  {Icon ? <Icon className="h-4 w-4 shrink-0 text-icon" aria-hidden /> : null}
                   {item.label}
                 </Link>
               );
@@ -95,7 +95,7 @@ export function SiteHeader() {
                 href={siteConfig.primaryCta.href}
                 eventName={analyticsEvents.ctaClickBookCall}
                 location="header_mobile"
-                className="inline-flex text-white"
+                className="inline-flex"
               >
                 {siteConfig.primaryCta.label}
               </TrackedLink>

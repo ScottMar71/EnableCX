@@ -1,8 +1,17 @@
 import { ServiceDetailTemplate } from "@/components/sections/service-detail-template";
+import { staticSeo } from "@/lib/seo";
+
+export const metadata = staticSeo({
+  path: "/services/ccaas-training",
+  title: "CCaaS Training",
+  description:
+    "AI specialist contact center training focused on adoption, agent confidence, and operational consistency.",
+});
 
 export default function CcaaSTrainingPage() {
   return (
     <ServiceDetailTemplate
+      servicePath="/services/ccaas-training"
       title="CCaaS Training"
       description="AI specialist contact center training focused on adoption, agent confidence, and operational consistency."
       audience={[

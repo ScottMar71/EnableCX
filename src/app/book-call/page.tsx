@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { PageIntro } from "@/components/sections/page-intro";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Input } from "@/components/ui/input";
@@ -7,17 +6,19 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { FormField } from "@/components/forms/form-field";
 import { submitBookCallLead } from "@/lib/actions/leads";
+import { staticSeo } from "@/lib/seo";
 import { CalendarClock, ShieldCheck } from "lucide-react";
 
 type BookCallPageProps = {
   searchParams: Promise<{ submitted?: string; error?: string }>;
 };
 
-export const metadata: Metadata = {
+export const metadata = staticSeo({
+  path: "/book-call",
   title: "Book a Discovery Call",
   description:
     "Book a short EnableCX discovery call to assess your SaaS, CCaaS, or UCaaS adoption challenges and define a practical training plan.",
-};
+});
 
 export default async function BookCallPage({ searchParams }: BookCallPageProps) {
   const params = await searchParams;
@@ -31,7 +32,7 @@ export default async function BookCallPage({ searchParams }: BookCallPageProps) 
         description="Share a few details and we will follow up with the best next step for your team."
       />
       <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-elevated px-3 py-1.5 text-xs font-semibold text-brand-primary">
-        <CalendarClock className="h-3.5 w-3.5" aria-hidden />
+        <CalendarClock className="h-3.5 w-3.5 text-icon" aria-hidden />
         Structured discovery tailored to your rollout stage
       </p>
       {submitted ? (
@@ -95,7 +96,7 @@ export default async function BookCallPage({ searchParams }: BookCallPageProps) 
           Submit Request
         </Button>
         <p className="inline-flex items-center gap-2 text-xs text-text-muted">
-          <ShieldCheck className="h-3.5 w-3.5 text-brand-primary" aria-hidden />
+          <ShieldCheck className="h-3.5 w-3.5 text-icon" aria-hidden />
           We only use this information to prepare your discovery call.
         </p>
       </form>
