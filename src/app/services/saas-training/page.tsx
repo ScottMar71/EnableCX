@@ -1,8 +1,17 @@
 import { ServiceDetailTemplate } from "@/components/sections/service-detail-template";
+import { staticSeo } from "@/lib/seo";
+
+export const metadata = staticSeo({
+  path: "/services/saas-training",
+  title: "SaaS Training",
+  description:
+    "AI specialist training and role-based enablement designed to improve SaaS adoption and workflow consistency.",
+});
 
 export default function SaaSTrainingPage() {
   return (
     <ServiceDetailTemplate
+      servicePath="/services/saas-training"
       title="SaaS Training"
       description="AI specialist training and role-based enablement designed to improve SaaS adoption and workflow consistency."
       audience={[

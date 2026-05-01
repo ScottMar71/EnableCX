@@ -57,7 +57,7 @@ export function ServicesGridSection({ showTitle = true }: ServicesGridSectionPro
               key={icon.label}
               className="inline-flex items-center gap-1.5 rounded-full border border-border-default bg-bg-elevated px-3 py-1.5 text-xs font-medium text-text-secondary"
             >
-              <icon.icon className="h-3.5 w-3.5 shrink-0 text-brand-primary" aria-hidden />
+              <icon.icon className="h-3.5 w-3.5 shrink-0 text-icon" aria-hidden />
               {icon.label}
             </li>
           ))}
@@ -72,12 +72,12 @@ export function ServicesGridSection({ showTitle = true }: ServicesGridSectionPro
             location="services_grid"
           >
             <Card className="h-full transition hover:-translate-y-0.5 hover:border-brand-primary">
-              <service.icon className="h-5 w-5 text-brand-primary" aria-hidden />
+              <service.icon className="h-5 w-5 text-icon" aria-hidden />
               <h3 className="mt-4 text-xl font-semibold text-text-primary">{service.title}</h3>
               <p className="mt-3 text-sm text-text-secondary">{service.description}</p>
               <p className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-primary">
                 Learn more
-                <ArrowRight className="h-4 w-4" aria-hidden />
+                <ArrowRight className="h-4 w-4 text-icon" aria-hidden />
               </p>
             </Card>
           </TrackedLink>

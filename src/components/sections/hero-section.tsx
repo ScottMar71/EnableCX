@@ -19,11 +19,11 @@ export function HeroSection() {
         </p>
         <ul className="grid gap-2 text-sm font-medium text-text-secondary sm:grid-cols-2">
           <li className="inline-flex items-center gap-2">
-            <CircleCheckBig className="h-4 w-4 text-brand-primary" aria-hidden />
+            <CircleCheckBig className="h-4 w-4 text-icon" aria-hidden />
             Practical role-based learning paths
           </li>
           <li className="inline-flex items-center gap-2">
-            <CircleCheckBig className="h-4 w-4 text-brand-primary" aria-hidden />
+            <CircleCheckBig className="h-4 w-4 text-icon" aria-hidden />
             Behaviour change, not just attendance
           </li>
         </ul>
@@ -32,21 +32,21 @@ export function HeroSection() {
         <div className="grid gap-3 sm:grid-cols-3 md:grid-cols-1">
           <div className="rounded-md border border-border-default bg-bg-subtle p-4">
             <div className="inline-flex items-center gap-2 text-sm font-semibold text-text-primary">
-              <Gauge className="h-4 w-4 text-brand-accent" aria-hidden />
+              <Gauge className="h-4 w-4 text-icon" aria-hidden />
               Faster time-to-competence
             </div>
             <p className="mt-2 text-sm text-text-secondary">Cut ramp friction with role-ready workflows.</p>
           </div>
           <div className="rounded-md border border-border-default bg-bg-subtle p-4">
             <div className="inline-flex items-center gap-2 text-sm font-semibold text-text-primary">
-              <Users className="h-4 w-4 text-brand-accent" aria-hidden />
+              <Users className="h-4 w-4 text-icon" aria-hidden />
               Team-level consistency
             </div>
             <p className="mt-2 text-sm text-text-secondary">Align frontline and admin execution standards.</p>
           </div>
           <div className="rounded-md border border-border-default bg-bg-subtle p-4">
             <div className="inline-flex items-center gap-2 text-sm font-semibold text-text-primary">
-              <Sparkles className="h-4 w-4 text-brand-accent" aria-hidden />
+              <Sparkles className="h-4 w-4 text-icon" aria-hidden />
               Measurable adoption outcomes
             </div>
             <p className="mt-2 text-sm text-text-secondary">Tie enablement to customer and operational metrics.</p>

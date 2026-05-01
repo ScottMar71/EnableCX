@@ -1,22 +1,39 @@
-import type { Metadata } from "next";
 import { PageIntro } from "@/components/sections/page-intro";
 import { ServicesGridSection } from "@/components/sections/services-grid-section";
 import { SectionShell } from "@/components/layout/section-shell";
 import { ProcessSection } from "@/components/sections/process-section";
 import { FAQSection } from "@/components/sections/faq-section";
 import { FinalCTASection } from "@/components/sections/final-cta-section";
+import { JsonLd } from "@/components/seo/json-ld";
+import { servicesPageFaqs } from "@/content/services-page-faqs";
 import { Card } from "@/components/ui/card";
+import { staticSeo } from "@/lib/seo";
 import { ArrowUpRight, Building2, Handshake, Sparkles, Users } from "lucide-react";
 
-export const metadata: Metadata = {
+export const metadata = staticSeo({
+  path: "/services",
   title: "Services",
   description:
     "Explore EnableCX services for SaaS, CCaaS, and UCaaS adoption training that improves consistency, confidence, and measurable platform value.",
-};
+});
 
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: servicesPageFaqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }}
+      />
       <SectionShell>
         <PageIntro
           title="Services"
@@ -24,7 +41,7 @@ export default function ServicesPage() {
         />
         <div className="mt-8 rounded-lg border border-border-default bg-bg-elevated p-6 shadow-[var(--shadow-sm)]">
           <p className="inline-flex items-center gap-2 text-sm font-semibold text-brand-primary">
-            <Sparkles className="h-4 w-4" aria-hidden />
+            <Sparkles className="h-4 w-4 text-icon" aria-hidden />
             Strategic enablement
           </p>
           <h2 className="mt-3 text-2xl font-semibold text-text-primary">AI Training for Every Level</h2>
@@ -54,7 +71,7 @@ export default function ServicesPage() {
           <div className="grid gap-4 md:grid-cols-3">
             <Card>
               <p className="inline-flex items-center gap-2 text-sm font-semibold text-text-primary">
-                <Building2 className="h-4 w-4 text-brand-accent" aria-hidden />
+                <Building2 className="h-4 w-4 text-icon" aria-hidden />
                 Organisations
               </p>
               <p className="mt-2 text-sm text-text-secondary">
@@ -64,7 +81,7 @@ export default function ServicesPage() {
             </Card>
             <Card>
               <p className="inline-flex items-center gap-2 text-sm font-semibold text-text-primary">
-                <Handshake className="h-4 w-4 text-brand-accent" aria-hidden />
+                <Handshake className="h-4 w-4 text-icon" aria-hidden />
                 Partners
               </p>
               <p className="mt-2 text-sm text-text-secondary">
@@ -73,7 +90,7 @@ export default function ServicesPage() {
             </Card>
             <Card>
               <p className="inline-flex items-center gap-2 text-sm font-semibold text-text-primary">
-                <Users className="h-4 w-4 text-brand-accent" aria-hidden />
+                <Users className="h-4 w-4 text-icon" aria-hidden />
                 Employees
               </p>
               <p className="mt-2 text-sm text-text-secondary">
@@ -83,7 +100,7 @@ export default function ServicesPage() {
             </Card>
           </div>
           <p className="inline-flex items-center gap-2 text-sm font-semibold text-brand-primary">
-            <ArrowUpRight className="h-4 w-4" aria-hidden />
+            <ArrowUpRight className="h-4 w-4 text-icon" aria-hidden />
             Delivery is tailored by workflow, role maturity, and business outcomes.
           </p>
         </div>

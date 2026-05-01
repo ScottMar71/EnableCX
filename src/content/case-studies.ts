@@ -1,6 +1,8 @@
 export type CaseStudy = {
   slug: string;
   title: string;
+  /** Short summary for SERPs and social cards (keep roughly under ~160 characters). */
+  excerpt: string;
   industry: string;
   publishedDate: string;
   challenge: string;
@@ -15,6 +17,8 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "travel-support-adoption-acceleration",
     title: "Support Team Adoption Acceleration in Travel Operations",
+    excerpt:
+      "How workflow-led CCaaS training improved adoption, consistency, and response times for a global travel support organisation.",
     industry: "Travel Operations",
     publishedDate: "2026-04-28",
     challenge:
@@ -38,6 +42,8 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "financial-services-cloud-communications-transformation",
     title: "Transforming Customer Experience Through Cloud Communications",
+    excerpt:
+      "Financial services CCaaS/UCaaS transformation: routing, training, and adoption support that cut handling times and improved service quality.",
     industry: "Financial Services",
     publishedDate: "2026-04-28",
     challenge:
@@ -59,23 +65,28 @@ export const caseStudies: CaseStudy[] = [
     quoteAttribution: "Programme Sponsor, UK Financial Services Provider",
   },
   {
-    slug: "ccaas-quality-consistency",
-    title: "CCaaS Quality and Workflow Consistency Program",
-    industry: "Customer Operations",
+    slug: "mobile-healthcare-platform-adoption",
+    title: "Improving Platform Adoption for a Mobile Healthcare Provider",
+    excerpt:
+      "Role-based SaaS training for ambulance dispatch and crews: faster onboarding, cleaner data, and fewer dispatch workarounds.",
+    industry: "Healthcare Transport",
     publishedDate: "2026-04-28",
     challenge:
-      "A contact center needed to improve omnichannel handling consistency after CCaaS migration.",
+      "A UK-based private ambulance provider delivering patient transport and urgent care services across regional contracts operates a fully mobile workforce. Their teams rely on a SaaS-based GPS tracking and dispatch platform to coordinate vehicles, manage schedules, and support time-sensitive care—often working closely with community services, including residential and care home settings. Despite investing in a modern GPS-enabled platform, adoption across frontline crews and operational teams was inconsistent. Different teams used the system in different ways, leading to gaps in tracking and reporting. Dispatch relied on manual workarounds to manage demand. New starters took too long to become fully effective. Inconsistent data made it harder to plan routes and respond efficiently—particularly when supporting vulnerable patients in community and care environments. The platform was in place, but it was not being used in a consistent, structured way—limiting its operational value.",
     approach:
-      "EnableCX aligned agent, supervisor, and QA enablement around shared workflows and coaching outcomes.",
+      "EnableCX delivered a structured, role-based training programme focused on real-world usage: mapping key workflows across dispatch, field crews, and operations; designing role-specific training aligned to day-to-day responsibilities; standardising how the platform should be used across all teams; delivering hands-on sessions using realistic scenarios, including time-critical collections and care-based journeys; and establishing clear best practices to remove ambiguity and reduce variation.",
     delivery:
-      "The program combined channel-specific exercises, supervisor playbooks, and QA feedback loops.",
+      "Training was delivered in phases to minimise disruption to active services: live, interactive sessions for dispatch and control teams; practical onboarding for frontline crews operating in the field; supporting materials and quick-reference guides for use during shifts; and follow-up sessions to reinforce consistent behaviours.",
     results: [
-      "More consistent handling across voice and digital channels.",
-      "Higher supervisor confidence in coaching workflows.",
-      "Better utilization of CCaaS platform features.",
+      "30–40% reduction in onboarding time for new starters.",
+      "25% improvement in data accuracy across tracking and job updates.",
+      "20% reduction in manual workarounds within dispatch operations.",
+      "15–20% faster job allocation and response coordination.",
+      "Increased first-time data capture consistency across crews.",
+      "Noticeable improvement in service reliability for community and care-based journeys.",
     ],
     quote:
-      "The training was tailored, practical, and directly tied to the customer experience outcomes we care about.",
-    quoteAttribution: "Customer Operations Director, Contact Centre Group",
+      "Structured, role-based training turned our platform from something people used differently into something we all rely on the same way—especially when every minute matters for patients.",
+    quoteAttribution: "Operations Leadership, UK Private Ambulance Provider",
   },
 ];

@@ -16,6 +16,8 @@
   --button-primary-hover: #087f7a;
   --button-primary-active: #066e6a;
   --button-primary-focus: #38bdf8;
+  /* Decorative / UI icons (Lucide, etc.) */
+  --icon: #0aa09b;
   --success: #16a34a;
   --warning: #f59e0b;
   --error: #dc2626;
@@ -42,6 +44,7 @@
   --color-btn-primary-hover: var(--button-primary-hover);
   --color-btn-primary-active: var(--button-primary-active);
   --color-btn-primary-focus: var(--button-primary-focus);
+  --color-icon: var(--icon);
   --color-state-success: var(--success);
   --color-state-warning: var(--warning);
   --color-state-error: var(--error);

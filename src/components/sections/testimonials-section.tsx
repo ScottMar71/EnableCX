@@ -25,7 +25,7 @@ export function TestimonialsSection() {
       <div className="grid gap-4 md:grid-cols-2">
         {testimonials.map((testimonial) => (
           <Card key={testimonial.quote} variant="testimonial">
-            <Quote className="h-5 w-5 text-brand-accent" aria-hidden />
+            <Quote className="h-5 w-5 text-icon" aria-hidden />
             <p className="mt-3 text-base text-text-secondary md:text-lg">
               &ldquo;{testimonial.quote}&rdquo;
             </p>

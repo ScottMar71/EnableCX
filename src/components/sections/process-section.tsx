@@ -43,7 +43,7 @@ export function ProcessSection() {
           >
             <p className="text-center text-sm font-semibold text-brand-primary">{step.title}</p>
             <div className="mt-3 flex justify-center">
-              <step.icon className="h-8 w-8 text-brand-accent" aria-hidden />
+              <step.icon className="h-8 w-8 text-icon" aria-hidden />
             </div>
             <p className="mt-3 text-center text-sm text-text-secondary">{step.description}</p>
           </div>

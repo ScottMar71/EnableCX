@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Icon preview",
+  robots: { index: false, follow: false },
+};
 
 const ICONS = [
   { name: "Assess", src: "/icons/assess.svg" },

@@ -2,10 +2,14 @@ import { FinalCTASection } from "@/components/sections/final-cta-section";
 import { PageIntro } from "@/components/sections/page-intro";
 import { SectionShell } from "@/components/layout/section-shell";
 import { Accordion } from "@/components/ui/accordion";
+import { JsonLd } from "@/components/seo/json-ld";
 import { Card } from "@/components/ui/card";
+import { absoluteUrl } from "@/lib/site";
 import { CheckCircle2 } from "lucide-react";
 
 type ServiceDetailTemplateProps = {
+  /** Site path for this service, e.g. `/services/saas-training` (canonical + structured data). */
+  servicePath: string;
   title: string;
   description: string;
   audience: string[];
@@ -16,6 +20,7 @@ type ServiceDetailTemplateProps = {
 };
 
 export function ServiceDetailTemplate({
+  servicePath,
   title,
   description,
   audience,
@@ -26,6 +31,36 @@ export function ServiceDetailTemplate({
 }: ServiceDetailTemplateProps) {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: title,
+          description,
+          url: absoluteUrl(servicePath),
+          provider: {
+            "@type": "Organization",
+            name: "EnableCX",
+            url: absoluteUrl("/"),
+          },
+          areaServed: "Global",
+          serviceType: "Training and enablement",
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }}
+      />
       <SectionShell>
         <PageIntro title={title} description={description} />
       </SectionShell>
@@ -67,7 +102,7 @@ function ServiceListSection({ title, items }: { title: string; items: string[] }
       <div className="grid gap-4 md:grid-cols-2">
         {items.map((item) => (
           <Card key={item} className="flex items-start gap-3">
-            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
+            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-icon" aria-hidden />
             <p className="text-sm text-text-secondary">{item}</p>
           </Card>
         ))}

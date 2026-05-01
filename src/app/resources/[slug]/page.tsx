@@ -9,7 +9,8 @@ import { TrackedLink } from "@/components/analytics/tracked-link";
 import { analyticsEvents } from "@/lib/analytics/events";
 import { Accordion } from "@/components/ui/accordion";
 import { JsonLd } from "@/components/seo/json-ld";
-import { ArrowRight, CircleCheckBig, Lightbulb, ListChecks } from "lucide-react";
+import { absoluteUrl } from "@/lib/site";
+import { ArrowRight, Calculator, CircleCheckBig, Lightbulb, ListChecks } from "lucide-react";
 
 type ResourceDetailProps = {
   params: Promise<{ slug: string }>;
@@ -30,7 +31,7 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "article",
-      url: `https://enablecx.com/resources/${article.slug}`,
+      url: absoluteUrl(`/resources/${article.slug}`),
       title: article.title,
       description: article.excerpt,
       publishedTime: article.publishedDate,
@@ -71,7 +72,7 @@ export default async function ResourceDetailPage({ params }: ResourceDetailProps
             "@type": "Organization",
             name: "EnableCX",
           },
-          mainEntityOfPage: `https://enablecx.com/resources/${article.slug}`,
+          mainEntityOfPage: absoluteUrl(`/resources/${article.slug}`),
         }}
       />
       <JsonLd
@@ -97,6 +98,31 @@ export default async function ResourceDetailPage({ params }: ResourceDetailProps
             {article.title}
           </h1>
           <p className="text-pretty text-lg text-text-secondary">{article.excerpt}</p>
+          {article.relatedTool ? (
+            <section className="rounded-md border border-brand-primary/25 bg-bg-elevated p-5 shadow-[var(--shadow-sm)]">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div className="space-y-2">
+                  <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-brand-primary">
+                    <Calculator className="h-4 w-4 shrink-0 text-icon" aria-hidden />
+                    Tool
+                  </p>
+                  <h3 className="text-xl font-semibold text-text-primary">{article.relatedTool.title}</h3>
+                  <p className="text-sm text-text-secondary">{article.relatedTool.description}</p>
+                </div>
+                <Button asChild className="shrink-0 sm:self-center">
+                  <TrackedLink
+                    href={article.relatedTool.href}
+                    eventName={analyticsEvents.calculatorOpen}
+                    location={`resource_article_${slug}`}
+                    className="inline-flex"
+                  >
+                    Open calculator
+                    <ArrowRight className="ml-1 h-4 w-4" aria-hidden />
+                  </TrackedLink>
+                </Button>
+              </div>
+            </section>
+          ) : null}
           <div className="space-y-4">
             {article.body.map((paragraph) => (
               <p key={paragraph} className="prose-shell text-text-secondary">
@@ -106,13 +132,13 @@ export default async function ResourceDetailPage({ params }: ResourceDetailProps
           </div>
           <section className="space-y-3 rounded-md border border-border-default bg-bg-subtle p-5">
             <h2 className="inline-flex items-center gap-2 text-xl font-semibold text-text-primary">
-              <Lightbulb className="h-5 w-5 text-brand-accent" aria-hidden />
+              <Lightbulb className="h-5 w-5 text-icon" aria-hidden />
               Key takeaways
             </h2>
             <ul className="space-y-2">
               {article.keyTakeaways.map((takeaway) => (
                 <li key={takeaway} className="inline-flex items-start gap-2 text-sm text-text-secondary">
-                  <CircleCheckBig className="mt-0.5 h-4 w-4 shrink-0 text-brand-primary" aria-hidden />
+                  <CircleCheckBig className="mt-0.5 h-4 w-4 shrink-0 text-icon" aria-hidden />
                   {takeaway}
                 </li>
               ))}
@@ -120,7 +146,7 @@ export default async function ResourceDetailPage({ params }: ResourceDetailProps
           </section>
           <section className="space-y-3 rounded-md border border-border-default bg-bg-elevated p-5">
             <h2 className="inline-flex items-center gap-2 text-xl font-semibold text-text-primary">
-              <ArrowRight className="h-5 w-5 text-brand-accent" aria-hidden />
+              <ArrowRight className="h-5 w-5 text-icon" aria-hidden />
               Related next steps
             </h2>
             <div className="flex flex-wrap gap-3">
@@ -155,7 +181,7 @@ export default async function ResourceDetailPage({ params }: ResourceDetailProps
           </section>
           <section className="space-y-3 rounded-md border border-border-default bg-bg-elevated p-5">
             <h2 className="inline-flex items-center gap-2 text-xl font-semibold text-text-primary">
-              <ListChecks className="h-5 w-5 text-brand-accent" aria-hidden />
+              <ListChecks className="h-5 w-5 text-icon" aria-hidden />
               Frequently asked questions
             </h2>
             <Accordion items={article.faqs} />

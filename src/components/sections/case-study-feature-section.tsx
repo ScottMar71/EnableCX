@@ -17,15 +17,15 @@ export function CaseStudyFeatureSection() {
       </p>
       <div className="grid gap-3 md:grid-cols-3">
         <p className="rounded-md border border-border-default bg-bg-subtle px-4 py-3 text-sm text-text-secondary">
-          <TimerReset className="mb-2 h-4 w-4 text-brand-accent" aria-hidden />
+          <TimerReset className="mb-2 h-4 w-4 text-icon" aria-hidden />
           25% reduction in average handling time within six months.
         </p>
         <p className="rounded-md border border-border-default bg-bg-subtle px-4 py-3 text-sm text-text-secondary">
-          <ShieldCheck className="mb-2 h-4 w-4 text-brand-accent" aria-hidden />
+          <ShieldCheck className="mb-2 h-4 w-4 text-icon" aria-hidden />
           Better first contact resolution through workflow standardisation.
         </p>
         <p className="rounded-md border border-border-default bg-bg-subtle px-4 py-3 text-sm text-text-secondary">
-          <BarChart3 className="mb-2 h-4 w-4 text-brand-accent" aria-hidden />
+          <BarChart3 className="mb-2 h-4 w-4 text-icon" aria-hidden />
           Improved visibility with real-time performance analytics.
         </p>
       </div>
@@ -36,7 +36,7 @@ export function CaseStudyFeatureSection() {
           location="home_case_study"
         >
           Read the Case Study
-          <ArrowRight className="h-4 w-4" aria-hidden />
+          <ArrowRight className="h-4 w-4 text-icon" aria-hidden />
         </TrackedLink>
       </Button>
     </div>

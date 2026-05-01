@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { PageIntro } from "@/components/sections/page-intro";
 import { Card } from "@/components/ui/card";
 import { SectionShell } from "@/components/layout/section-shell";
@@ -6,13 +5,15 @@ import { caseStudies } from "@/content/case-studies";
 import { TrackedLink } from "@/components/analytics/tracked-link";
 import { analyticsEvents } from "@/lib/analytics/events";
 import { FinalCTASection } from "@/components/sections/final-cta-section";
+import { staticSeo } from "@/lib/seo";
 import { ArrowRight, BriefcaseBusiness } from "lucide-react";
 
-export const metadata: Metadata = {
+export const metadata = staticSeo({
+  path: "/case-studies",
   title: "Case Studies",
   description:
     "See how EnableCX case studies improve adoption, confidence, and customer outcomes across SaaS, CCaaS, and UCaaS teams.",
-};
+});
 
 export default function CaseStudiesPage() {
   return (
@@ -23,7 +24,7 @@ export default function CaseStudiesPage() {
           description="Examples of how EnableCX improves platform adoption and team confidence."
         />
         <p className="mt-5 inline-flex items-center gap-2 rounded-full border border-border-default bg-bg-elevated px-3 py-1.5 text-xs font-semibold text-brand-primary">
-          <BriefcaseBusiness className="h-3.5 w-3.5" aria-hidden />
+          <BriefcaseBusiness className="h-3.5 w-3.5 text-icon" aria-hidden />
           Real delivery outcomes across SaaS, CCaaS, and UCaaS
         </p>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -42,7 +43,7 @@ export default function CaseStudiesPage() {
                 <p className="mt-2 text-sm text-text-secondary">{item.challenge}</p>
                 <p className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-primary">
                   View case study
-                  <ArrowRight className="h-4 w-4" aria-hidden />
+                  <ArrowRight className="h-4 w-4 text-icon" aria-hidden />
                 </p>
               </Card>
             </TrackedLink>

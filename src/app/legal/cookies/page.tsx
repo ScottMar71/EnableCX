@@ -1,6 +1,14 @@
 import { PageIntro } from "@/components/sections/page-intro";
 import { SectionShell } from "@/components/layout/section-shell";
+import { staticSeo } from "@/lib/seo";
 import { Cookie, Mail } from "lucide-react";
+
+export const metadata = staticSeo({
+  path: "/legal/cookies",
+  title: "Cookie Policy",
+  description:
+    "Information about how EnableCX uses cookies and similar technologies on this website.",
+});
 
 export default function CookiesPage() {
   return (
@@ -11,7 +19,7 @@ export default function CookiesPage() {
       />
       <article className="prose-shell mt-8 space-y-4 rounded-lg border border-border-default bg-bg-elevated p-6 text-text-secondary shadow-[var(--shadow-sm)]">
         <p className="inline-flex items-center gap-2 text-sm font-semibold text-brand-primary">
-          <Cookie className="h-4 w-4" aria-hidden />
+          <Cookie className="h-4 w-4 text-icon" aria-hidden />
           Consent-first cookie controls
         </p>
         <section className="space-y-2 rounded-md border border-border-default bg-bg-subtle p-4">
@@ -62,7 +70,7 @@ export default function CookiesPage() {
         </section>
         <section className="space-y-2 rounded-md border border-border-default bg-bg-subtle p-4">
           <h2 className="inline-flex items-center gap-2 text-xl font-semibold text-text-primary">
-            <Mail className="h-5 w-5 text-brand-accent" aria-hidden />
+            <Mail className="h-5 w-5 text-icon" aria-hidden />
             Contact
           </h2>
           <p>

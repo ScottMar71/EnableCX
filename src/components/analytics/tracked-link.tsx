@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { dispatchAnalyticsEvent } from "@/lib/analytics/dispatch";
 import { type AnalyticsEventName } from "@/lib/analytics/events";
 
 type TrackedLinkProps = {
@@ -23,15 +24,7 @@ export function TrackedLink({
     <Link
       href={href}
       className={className}
-      onClick={() => {
-        if (typeof window === "undefined") return;
-
-        window.dispatchEvent(
-          new CustomEvent("enablecx:analytics", {
-            detail: { eventName, location, path: window.location.pathname },
-          })
-        );
-      }}
+      onClick={() => dispatchAnalyticsEvent(eventName, location)}
     >
       {children}
     </Link>
